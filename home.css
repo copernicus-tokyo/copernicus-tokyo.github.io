@@ -147,6 +147,9 @@ a:hover{text-decoration:underline}
 .work__img{aspect-ratio:16/9;background:linear-gradient(160deg,#e8f0fa,#d7e5f6);
   display:flex;align-items:center;justify-content:center;color:#8496b3;font-size:.78rem;
   letter-spacing:.08em;text-align:center;padding:16px;border-bottom:1px solid var(--line)}
+/* 画像を入れた場合。未差し替えの div 枠と両立させるため img だけを上書きする */
+img.work__img{display:block;width:100%;height:auto;padding:0;object-fit:cover}
+.shot__img{display:block;width:100%;height:100%;object-fit:cover}
 .work__b{padding:18px 20px 20px}
 .work__t{font-family:var(--mincho);font-weight:700;font-size:1.05rem;letter-spacing:.06em;margin-bottom:8px}
 .work__d{font-size:.87rem;color:var(--ink-soft)}

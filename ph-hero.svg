@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img"
+     aria-label="ハイパーレイヤリングの模式図。背景地図・浸水想定・道路交通・避難所の4つのレイヤーが重なり合う様子を示す仮画像">
+<!-- 表示幅は約454px（縮小率0.28倍）。本文文字は48px以上とし、画面上で13px相当を確保している -->
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#eef4fc"/><stop offset="1" stop-color="#dbe7f7"/>
+  </linearGradient>
+  <clipPath id="c1"><polygon points="280,300 580,170 880,300 580,430"/></clipPath>
+  <clipPath id="c2"><polygon points="280,455 580,325 880,455 580,585"/></clipPath>
+  <clipPath id="c3"><polygon points="280,610 580,480 880,610 580,740"/></clipPath>
+</defs>
+
+<rect width="1600" height="1000" fill="url(#bg)"/>
+
+<g font-family="'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif">
+
+  <text x="92" y="122" font-size="62" font-weight="700" fill="#005bba">ハイパーレイヤリング</text>
+  <text x="92" y="182" font-size="40" fill="#5a6b87">置いたまま、ブラウザで重ねる</text>
+
+  <!-- 下から順に描画し、上のレイヤーが手前に重なるようにする -->
+
+  <polygon points="280,765 580,635 880,765 580,895" fill="#ffffff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g stroke="#a9c6e8" stroke-width="3">
+    <line x1="340" y1="739" x2="640" y2="869"/><line x1="400" y1="713" x2="700" y2="843"/>
+    <line x1="460" y1="687" x2="760" y2="817"/><line x1="520" y1="661" x2="820" y2="791"/>
+    <line x1="340" y1="791" x2="640" y2="661"/><line x1="400" y1="817" x2="700" y2="687"/>
+    <line x1="460" y1="843" x2="760" y2="713"/><line x1="520" y1="869" x2="820" y2="739"/>
+  </g>
+
+  <polygon points="280,610 580,480 880,610 580,740" fill="#ffffff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#c3)">
+    <ellipse cx="512" cy="622" rx="168" ry="62" fill="#5b9be6" fill-opacity=".5"/>
+    <ellipse cx="662" cy="596" rx="108" ry="40" fill="#5b9be6" fill-opacity=".36"/>
+  </g>
+
+  <polygon points="280,455 580,325 880,455 580,585" fill="#ffffff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#c2)" stroke="#005bba" stroke-width="8" stroke-linecap="round">
+    <line x1="380" y1="410" x2="680" y2="540"/>
+    <line x1="470" y1="371" x2="770" y2="501"/>
+    <line x1="425" y1="520" x2="725" y2="390"/>
+  </g>
+
+  <polygon points="280,300 580,170 880,300 580,430" fill="#ffffff" fill-opacity=".94" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#c1)">
+    <path d="M450 300 L520 340 L650 330" fill="none" stroke="#ffd600" stroke-width="11"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#005bba">
+      <circle cx="450" cy="300" r="18"/><circle cx="580" cy="266" r="18"/>
+      <circle cx="650" cy="330" r="18"/><circle cx="520" cy="340" r="18"/>
+      <circle cx="710" cy="284" r="18"/>
+    </g>
+  </g>
+
+  <g stroke="#8fa8c8" stroke-width="3">
+    <line x1="886" y1="300" x2="930" y2="300"/><line x1="886" y1="455" x2="930" y2="455"/>
+    <line x1="886" y1="610" x2="930" y2="610"/><line x1="886" y1="765" x2="930" y2="765"/>
+  </g>
+  <g font-size="48" fill="#12203a">
+    <text x="946" y="316">避難所・避難経路</text>
+    <text x="946" y="471">道路・交通</text>
+    <text x="946" y="626">浸水想定</text>
+    <text x="946" y="781">背景地図・標高</text>
+  </g>
+
+  <text x="92" y="958" font-size="44" fill="#7d8fae">※ 実際の画面キャプチャに差し替える予定の模式図です</text>
+
+  <rect x="1240" y="34" width="320" height="104" rx="52" fill="#ffd600"/>
+  <text x="1400" y="104" font-size="68" font-weight="700" fill="#050a18" text-anchor="middle">仮画像</text>
+</g>
+</svg>
