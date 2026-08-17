@@ -307,5 +307,16 @@
     },{threshold:0}).observe(canvas.parentElement);
   }
 
-  init();
+  /* 3Dの初期化（星の生成・テクスチャ作成・WebGLの確保）は数百ミリ秒かかる。
+     これをスクリプト読み込み直後に走らせると、利用者が最初にスクロールしようと
+     した瞬間と重なり、画面が固まったように感じられる。
+     ヒーローは背景の演出なので、ページが操作できるようになってから動き出せばよい */
+  var started = false;
+  function start(){ if(started) return; started = true; init(); }
+  function scheduleStart(){
+    if("requestIdleCallback" in window){ requestIdleCallback(start, {timeout:1200}); }
+    else { setTimeout(start, 250); }
+  }
+  if(document.readyState === "complete"){ scheduleStart(); }
+  else { window.addEventListener("load", scheduleStart, {once:true}); }
 })();
