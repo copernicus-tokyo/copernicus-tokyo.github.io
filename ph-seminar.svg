@@ -44,7 +44,8 @@
   <rect x="850" y="536" width="360" height="80" rx="40" fill="#ffd600"/>
   <text x="1030" y="590" font-size="52" font-weight="700" fill="#050a18" text-anchor="middle">全3部・60分</text>
 
-  <text x="850" y="694" font-size="52" fill="#12203a">オンライン配信予定</text>
+  <text x="850" y="682" font-size="48" font-weight="700" fill="#12203a">2026年9月1日〜12月28日</text>
+  <text x="850" y="744" font-size="44" fill="#5a6b87">参加費無料・事前登録制</text>
 
   <text x="80" y="700" font-size="44" fill="#7d8fae">※ 正式な告知バナーに</text>
   <text x="80" y="744" font-size="44" fill="#7d8fae">　差し替える予定の仮デザインです</text>
