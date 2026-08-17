@@ -164,15 +164,23 @@
     return new THREE.Points(geo, mat);
   }
 
+  /* スマートフォンでは描画を軽くする。
+     ヒーローは画面いっぱいの WebGL で、初期画面にいる間だけ描画し続ける。
+     ここが重いと、最初のスクロールが引っかかって「固まった」ように感じられる */
+  var lowPower = window.innerWidth < 820 || (navigator.hardwareConcurrency || 8) <= 4;
+
   function init(){
-    renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
+    renderer = new THREE.WebGLRenderer({
+      canvas:canvas, antialias:!lowPower, alpha:true,
+      powerPreference:"low-power"
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, lowPower ? 1.5 : 2));
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(55, 1, .1, 400);
     camera.position.set(0, 9, 46);
 
-    starsA = makeStars(900, 120, 1.5, .8);
-    starsB = makeStars(500, 160, 2.2, .5);
+    starsA = makeStars(lowPower ? 420 : 900, 120, 1.5, .8);
+    starsB = makeStars(lowPower ? 220 : 500, 160, 2.2, .5);
     scene.add(starsA); scene.add(starsB);
 
     orbitGroup = new THREE.Group();
@@ -272,11 +280,26 @@
     renderer.render(scene, camera);
   }
 
-  window.addEventListener("resize", function(){ resize(); if(reduced) renderOnce(); });
-  window.addEventListener("pointermove", function(e){
-    mouseX = (e.clientX / window.innerWidth - .5)*2;
-    mouseY = (e.clientY / window.innerHeight - .5)*-2;
+  /* iOS Safari は、スクロールでアドレスバーが出入りするたびに resize を投げてくる。
+     そのつど描画バッファを作り直すと、いちばん最初のスクロールが引っかかり、
+     固まったように感じられる。幅が変わったとき（＝画面回転やPCのウィンドウ操作）と、
+     高さが大きく変わったときだけ作り直す */
+  var lastW = window.innerWidth, lastH = window.innerHeight, resizeTimer = 0;
+  window.addEventListener("resize", function(){
+    var w = window.innerWidth, h = window.innerHeight;
+    if(w === lastW && Math.abs(h - lastH) < 140) return;   /* アドレスバーの出入りは無視 */
+    lastW = w; lastH = h;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ resize(); if(reduced) renderOnce(); }, 120);
   }, {passive:true});
+  /* 視点を指の動きに追従させるのはマウス環境だけにする。
+     指で操作する端末では、スクロール中の指の動きまで拾って視点が揺れてしまう */
+  if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+    window.addEventListener("pointermove", function(e){
+      mouseX = (e.clientX / window.innerWidth - .5)*2;
+      mouseY = (e.clientY / window.innerHeight - .5)*-2;
+    }, {passive:true});
+  }
 
   if("IntersectionObserver" in window){
     new IntersectionObserver(function(entries){
