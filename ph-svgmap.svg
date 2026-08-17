@@ -1,65 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img"
-     aria-label="SVGMapの仕組みの模式図。行政・研究機関・民間のサーバにデータを置いたまま、閲覧者のブラウザ上で重ね合わせる様子を示す仮画像">
+     aria-label="ハイパーレイヤリングの模式図。背景地図・浸水想定・道路交通・避難所の4つのレイヤーが1枚の地図として重なり合う様子を示す仮画像">
 <!-- 表示幅は約329px（縮小率0.21倍）。本文文字は58px以上とし、画面上で12px相当を確保している -->
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#eef4fc"/><stop offset="1" stop-color="#dbe7f7"/>
   </linearGradient>
-  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-    <path d="M0 0 L10 5 L0 10 z" fill="#5b9be6"/>
-  </marker>
+  <clipPath id="s1"><polygon points="230,300 520,180 810,300 520,420"/></clipPath>
+  <clipPath id="s2"><polygon points="230,430 520,310 810,430 520,550"/></clipPath>
+  <clipPath id="s3"><polygon points="230,560 520,440 810,560 520,680"/></clipPath>
 </defs>
 
 <rect width="1600" height="900" fill="url(#bg)"/>
 
 <g font-family="'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif">
 
-  <text x="80" y="122" font-size="66" font-weight="700" fill="#005bba">ブラウザの上で重ねる</text>
+  <text x="80" y="112" font-size="66" font-weight="700" fill="#005bba">250種類以上のレイヤー</text>
 
-  <!-- 左：データの持ち主（サーバは各組織に置かれたまま） -->
-  <g>
-    <rect x="80" y="270" width="400" height="130" rx="12" fill="#fff" stroke="#c6d7ec" stroke-width="3"/>
-    <rect x="112" y="305" width="60" height="60" rx="8" fill="#005bba"/>
-    <rect x="124" y="318" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="332" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="346" width="20" height="7" rx="3.5" fill="#fff"/>
-    <text x="198" y="356" font-size="58" fill="#12203a">行政</text>
+  <!-- 下から順に描画し、上のレイヤーが手前に重なるようにする -->
 
-    <rect x="80" y="420" width="400" height="130" rx="12" fill="#fff" stroke="#c6d7ec" stroke-width="3"/>
-    <rect x="112" y="455" width="60" height="60" rx="8" fill="#005bba"/>
-    <rect x="124" y="468" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="482" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="496" width="20" height="7" rx="3.5" fill="#fff"/>
-    <text x="198" y="506" font-size="58" fill="#12203a">研究機関</text>
-
-    <rect x="80" y="570" width="400" height="130" rx="12" fill="#fff" stroke="#c6d7ec" stroke-width="3"/>
-    <rect x="112" y="605" width="60" height="60" rx="8" fill="#005bba"/>
-    <rect x="124" y="618" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="632" width="36" height="7" rx="3.5" fill="#fff"/><rect x="124" y="646" width="20" height="7" rx="3.5" fill="#fff"/>
-    <text x="198" y="656" font-size="58" fill="#12203a">民間</text>
+  <polygon points="230,690 520,570 810,690 520,810" fill="#fff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g stroke="#a9c6e8" stroke-width="3">
+    <line x1="288" y1="666" x2="578" y2="786"/><line x1="346" y1="642" x2="636" y2="762"/>
+    <line x1="404" y1="618" x2="694" y2="738"/><line x1="462" y1="594" x2="752" y2="714"/>
+    <line x1="288" y1="714" x2="578" y2="594"/><line x1="346" y1="738" x2="636" y2="618"/>
+    <line x1="404" y1="762" x2="694" y2="642"/><line x1="462" y1="786" x2="752" y2="666"/>
   </g>
 
-  <!-- 中央：参照だけが渡り、データそのものは動かない -->
-  <g fill="none" stroke="#5b9be6" stroke-width="5" stroke-dasharray="14 12" marker-end="url(#ar)">
-    <path d="M492 335 Q700 335 890 430"/>
-    <path d="M492 485 Q700 485 890 460"/>
-    <path d="M492 635 Q700 635 890 490"/>
+  <polygon points="230,560 520,440 810,560 520,680" fill="#fff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#s3)">
+    <ellipse cx="455" cy="572" rx="160" ry="56" fill="#5b9be6" fill-opacity=".5"/>
+    <ellipse cx="600" cy="548" rx="102" ry="36" fill="#5b9be6" fill-opacity=".36"/>
   </g>
 
-  <!-- 右：閲覧者のブラウザ -->
-  <g>
-    <rect x="900" y="250" width="620" height="420" rx="14" fill="#fff" stroke="#c6d7ec" stroke-width="3"/>
-    <path d="M900 264 a14 14 0 0 1 14-14 h592 a14 14 0 0 1 14 14 v46 h-620 z" fill="#f5f8fd"/>
-    <line x1="900" y1="310" x2="1520" y2="310" stroke="#dfe5ef" stroke-width="3"/>
-    <circle cx="934" cy="280" r="9" fill="#cdd6e4"/><circle cx="962" cy="280" r="9" fill="#cdd6e4"/><circle cx="990" cy="280" r="9" fill="#cdd6e4"/>
+  <polygon points="230,430 520,310 810,430 520,550" fill="#fff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#s2)" stroke="#005bba" stroke-width="9" stroke-linecap="round">
+    <line x1="320" y1="388" x2="610" y2="508"/>
+    <line x1="405" y1="353" x2="695" y2="473"/>
+    <line x1="365" y1="490" x2="655" y2="370"/>
+  </g>
 
-    <polygon points="1010,570 1210,485 1410,570 1210,655" fill="#fff" stroke="#5b9be6" stroke-width="4"/>
-    <g stroke="#a9c6e8" stroke-width="3">
-      <line x1="1070" y1="545" x2="1270" y2="630"/><line x1="1130" y1="519" x2="1330" y2="604"/>
-      <line x1="1070" y1="595" x2="1270" y2="510"/><line x1="1130" y1="621" x2="1330" y2="536"/>
+  <polygon points="230,300 520,180 810,300 520,420" fill="#fff" fill-opacity=".94" stroke="#5b9be6" stroke-width="4"/>
+  <g clip-path="url(#s1)">
+    <path d="M400 300 L465 336 L590 328" fill="none" stroke="#ffd600" stroke-width="12"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#005bba">
+      <circle cx="400" cy="300" r="19"/><circle cx="520" cy="268" r="19"/>
+      <circle cx="590" cy="328" r="19"/><circle cx="465" cy="336" r="19"/>
+      <circle cx="648" cy="286" r="19"/>
     </g>
-    <polygon points="1010,485 1210,400 1410,485 1210,570" fill="#fff" fill-opacity=".9" stroke="#5b9be6" stroke-width="4"/>
-    <ellipse cx="1175" cy="489" rx="96" ry="34" fill="#5b9be6" fill-opacity=".45"/>
-    <polygon points="1010,400 1210,315 1410,400 1210,485" fill="#fff" fill-opacity=".94" stroke="#5b9be6" stroke-width="4"/>
-    <g fill="#005bba"><circle cx="1155" cy="400" r="13"/><circle cx="1240" cy="376" r="13"/><circle cx="1272" cy="418" r="13"/></g>
   </g>
 
-  <text x="80" y="796" font-size="58" font-weight="700" fill="#12203a">データは動かない</text>
+  <g stroke="#8fa8c8" stroke-width="3">
+    <line x1="816" y1="300" x2="856" y2="300"/><line x1="816" y1="430" x2="856" y2="430"/>
+    <line x1="816" y1="560" x2="856" y2="560"/><line x1="816" y1="690" x2="856" y2="690"/>
+  </g>
+  <g font-size="58" fill="#12203a">
+    <text x="872" y="318">避難所</text>
+    <text x="872" y="448">道路・交通</text>
+    <text x="872" y="578">浸水想定</text>
+    <text x="872" y="708">背景地図</text>
+  </g>
+
   <text x="80" y="862" font-size="44" fill="#7d8fae">※ 実際の画面キャプチャに差し替える予定の模式図です</text>
 
   <rect x="1240" y="34" width="320" height="104" rx="52" fill="#ffd600"/>
