@@ -76,7 +76,25 @@ a:hover{text-decoration:underline}
   transition:background .3s;
 }
 .hd__nav .hd__cta:hover{background:#eef5fd;color:var(--blue);text-decoration:none}
-@media (max-width:900px){.hd__nav{display:none}}
+/* 狭い画面ではメニューを2段目へ送り、横スクロールで全項目に届くようにする。
+   以前はここで display:none としていたが、スマートフォンから活動記録・規約・
+   コンセプトへ移動する手段がヘッダーから失われるため取りやめた */
+@media (max-width:900px){
+  .hd__in{flex-wrap:wrap;justify-content:flex-start;gap:10px 0;padding-bottom:8px}
+  .hd__brand{flex:none}
+  .hd__in nav{
+    order:3;width:100%;overflow-x:auto;overscroll-behavior-x:contain;
+    scrollbar-width:none;-ms-overflow-style:none;
+    margin:0 calc(-1 * clamp(20px,5vw,40px));
+    padding:2px clamp(20px,5vw,40px);
+  }
+  .hd__in nav::-webkit-scrollbar{display:none}
+  .hd__nav{flex-wrap:nowrap;gap:16px}
+  .hd__nav li{flex:none}
+  .hd__nav a{font-size:.82rem;white-space:nowrap}
+  .hd__nav .is-story a{padding:6px 14px}
+  .hd__nav .hd__cta{padding:5px 13px;font-size:.8rem}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(44px,7vh,76px) 0 clamp(36px,6vh,60px);border-bottom:1px solid var(--line-soft)}
