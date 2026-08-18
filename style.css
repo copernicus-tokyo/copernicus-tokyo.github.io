@@ -204,6 +204,19 @@ a:hover{color:var(--paper)}
   background:linear-gradient(to bottom,var(--astral),transparent);
   animation:drip 2.6s ease-in-out infinite;
 }
+/* 「回転をはじめる」は画面右端に縦組みで置いている。狭い画面では
+   説明文がここまで伸びて重なるため、本文側に逃げ幅を確保する。
+   iPhone は和文フォントの字幅が異なり、PCでは重ならなくても重なることがある */
+@media (max-width:820px){
+  .hero__sub{padding-right:52px}
+  .hero__scroll{right:14px;bottom:26px;font-size:.58rem;letter-spacing:.34em}
+  .hero__scroll::after{height:46px}
+}
+/* 画面が低いときは縦の余裕がないので、装飾である案内自体を出さない */
+@media (max-width:820px) and (max-height:680px){
+  .hero__scroll{display:none}
+  .hero__sub{padding-right:0}
+}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* hero load sequence */
