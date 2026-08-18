@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=13">
+<link rel="stylesheet" href="home.css?v=23">
 </head>
 <body>
 
@@ -101,9 +101,11 @@
         <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
         <span class="shot__url">svgmap.org / …</span>
       </div>
-      <div class="shot__body">
+      <!-- 画像の指定は同じフォルダの hero.js を編集してください。
+           2枚以上書くと自動で切り替わります（1枚なら静止したまま） -->
+      <div class="shot__body" id="heroShot">
         <img class="shot__img" src="ph-hero.svg" width="1600" height="1000"
-             alt="背景地図・浸水想定・道路交通・避難所の4つのレイヤーが、ブラウザの上で1枚の地図として重なり合う様子を示した図">
+             alt="各組織にデータを置いたまま、ブラウザの上で重ね合わせる仕組みの図">
       </div>
       <figcaption class="shot__cap">
         1つのURLで、目的に応じたレイヤーの組み合わせをそのまま届けられます。
@@ -185,15 +187,15 @@
 
       <article class="work rv">
         <img class="work__img" src="ph-layerset.svg" width="1600" height="900" loading="lazy"
-             alt="広域被害ポテンシャル、交通・サプライチェーン、重要施設、リアルタイム監視、避難先・避難経路の5つのレイヤーセットの構成図">
+             alt="避難先・避難経路、広域被害ポテンシャル、交通・サプライチェーン、重要施設の脆弱性、リアルタイム監視の5つのレイヤーセットの構成図">
         <div class="work__b">
           <h3 class="work__t">目的別レイヤーセット</h3>
           <p class="work__d">
             「何を重ねればよいか」を毎回考えなくて済むよう、目的別の組み合わせを1つのURLにまとめています。
-            広域被害ポテンシャル／交通・サプライチェーン／重要施設／リアルタイム監視／避難先・避難経路の5種を整備中です。
+            避難先・避難経路／広域被害ポテンシャル／交通・サプライチェーン／重要施設／リアルタイム監視の5種を整備中です。
           </p>
-          <!-- 【要設定】公開可能なパーマリンクが決まったらリンク先を差し替え -->
-          <a class="work__more" href="#">実例を見る（準備中）</a>
+          <a class="work__more" href="layersets.html">実例を見る</a>
+          <a class="work__more" href="kumamoto.html">令和8年 熊本地震のレイヤーセット</a>
         </div>
       </article>
 
@@ -206,6 +208,25 @@
             浸水・土砂災害に公共施設を重ね、「災害リスクのある公共施設はどこか」を生徒自身に考えさせる授業を実施しました。
             データを読み解く力を、地域で学び地域で働く人へ手渡す取り組みです。
           </p>
+        </div>
+      </article>
+
+      <article class="work rv">
+        <img class="work__img" src="ph-dev.svg" width="1600" height="900" loading="lazy"
+             alt="毎月の研究会のたびに、公開情報の新規レイヤー化、より使いやすいツールの開発、目的別の組み合わせの拡充が重ねられていることを示す図">
+        <div class="work__b">
+          <h3 class="work__t">情報拡充と機能追加</h3>
+          <p class="work__d">
+            ウェブで公開されている情報を、地図に重ねられる<b>レイヤーにする</b>。
+            表やPDF、地図の画像であっても、重ねられるかたちへ持っていきます。
+            あわせて、<b>より使いやすいツール</b>の開発と、目的別の組み合わせの拡充を進めています。
+            毎月の研究会と、その合間の連絡用チャットで、こうしたやりとりが重ねられています。
+            <b>「使いたいデータが足りない」「こんな重ね方はできないか」</b>——
+            持ち寄られた問いが、次の開発の題材になります。
+            250種類以上のレイヤーは、その積み重ねでできています。
+          </p>
+          <p class="work__mem"><span class="work__lock">会員限定</span>個々の機能名や、追加したレイヤーの名称は会員向けにご案内しています。</p>
+          <a class="work__more" href="#join">入会案内</a>
         </div>
       </article>
 
@@ -457,10 +478,78 @@
 
 <!-- お知らせのデータ。ローカルでファイルを直接開いた場合にも読めるよう、
      テキストファイルではなくスクリプトとして読み込んでいます -->
+<script src="hero.js?v=1"></script>
 <script src="news.js?v=2"></script>
 <script>
 (function(){
   "use strict";
+
+  /* ----- トップのスライド（hero.js の内容で組み立てる） -----
+     1枚なら静止。2枚以上で6秒ごとに切り替わる。
+     「視差を減らす」設定の端末では自動切替を行わない。 */
+  (function(){
+    var box = document.getElementById("heroShot");
+    if(!box || typeof window.HERO !== "string") return;
+
+    var items = window.HERO.split(/\r?\n/)
+      .map(function(l){ return l.replace(/\s+$/, ""); })
+      .filter(function(l){ return l.trim() && l.trim().charAt(0) !== "#"; })
+      .map(function(l){
+        var c = l.split("	").map(function(s){ return s.trim(); });
+        return { src:c[0], alt:c[1] || "", href:c[2] || "" };
+      })
+      .filter(function(o){ return o.src; });
+    if(items.length < 2) return;          /* 1枚のときはHTMLのまま */
+
+    var html = "";
+    items.forEach(function(o, i){
+      var img = '<img class="shot__img" src="' + o.src + '" width="1600" height="1000" alt="' +
+                o.alt.replace(/"/g, "&quot;") + '"' + (i ? ' loading="lazy"' : '') + '>';
+      html += '<div class="shot__slide' + (i ? '' : ' is-on') + '" aria-hidden="' + (i ? 'true' : 'false') + '">' +
+              (o.href ? '<a href="' + o.href + '">' + img + '<span class="shot__tag">' +
+                        o.alt.replace(/[<>]/g, "") + '<i>→</i></span></a>' : img) +
+              '</div>';
+    });
+    html += '<div class="shot__dots" role="tablist" aria-label="トップ画像の切り替え">';
+    items.forEach(function(o, i){
+      html += '<button class="shot__dot2' + (i ? '' : ' is-on') + '" role="tab" type="button" ' +
+              'aria-selected="' + (i ? 'false' : 'true') + '" aria-label="' + (i+1) + '枚目"></button>';
+    });
+    html += '</div>';
+    box.innerHTML = html;
+
+    var slides = box.querySelectorAll(".shot__slide");
+    var dots   = box.querySelectorAll(".shot__dot2");
+    var cur = 0, timer = null;
+
+    function show(n){
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function(el, i){
+        el.classList.toggle("is-on", i === cur);
+        el.setAttribute("aria-hidden", i === cur ? "false" : "true");
+      });
+      dots.forEach(function(el, i){
+        el.classList.toggle("is-on", i === cur);
+        el.setAttribute("aria-selected", i === cur ? "true" : "false");
+      });
+    }
+    function start(){ stop(); timer = setInterval(function(){ show(cur+1); }, 6000); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    dots.forEach(function(el, i){
+      el.addEventListener("click", function(){ show(i); stop(); });
+    });
+    /* 読んでいる最中に切り替わらないよう、指や視線が乗ったら止める */
+    box.addEventListener("mouseenter", stop);
+    box.addEventListener("mouseleave", start);
+    box.addEventListener("focusin", stop);
+    box.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", function(){
+      if(document.hidden){ stop(); } else { start(); }
+    });
+
+    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) start();
+  })();
 
   /* ----- 出現アニメーション ----- */
   var els = document.querySelectorAll(".rv");

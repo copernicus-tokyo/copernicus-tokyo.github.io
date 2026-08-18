@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>令和8年 熊本地震（試作） — 分散型防災データ利活用研究会</title>
+<meta name="description" content="2026年7月28日に発生した令和8年熊本地震について、公開されている防災データを目的別に重ね合わせた地図です。研究会による試作。">
+<!-- SEO:start -->
+<link rel="canonical" href="https://copernicus-tokyo.github.io/kumamoto.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="分散型防災データ利活用研究会">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://copernicus-tokyo.github.io/kumamoto.html">
+<meta property="og:title" content="令和8年 熊本地震（試作） — 分散型防災データ利活用研究会">
+<meta property="og:description" content="令和8年熊本地震について、公開データを目的別に重ね合わせた試作の地図です。">
+<meta property="og:image" content="https://copernicus-tokyo.github.io/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<!-- SEO:end -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050a18'/%3E%3Cellipse cx='32' cy='32' rx='24' ry='11' fill='none' stroke='%235b9be6' stroke-width='3' transform='rotate(-24 32 32)'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffd600'/%3E%3Ccircle cx='14' cy='40' r='4' fill='%235b9be6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css?v=16">
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd__in">
+    <a class="hd__brand" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="#050a18"/>
+        <circle cx="17" cy="17" r="2.4" fill="#ffd600"/>
+        <ellipse cx="17" cy="17" rx="12.5" ry="6" fill="none" stroke="#5b9be6" stroke-width="1.1" transform="rotate(-24 17 17)"/>
+        <circle cx="7.6" cy="21.4" r="1.5" fill="#5b9be6"/>
+      </svg>
+      <span class="hd__name">分散型防災データ利活用研究会<small>Copernicus Project</small></span>
+    </a>
+    <nav>
+      <ul class="hd__nav">
+        <li><a href="index.html#about">この会について</a></li>
+        <li><a href="index.html#works">成果物</a></li>
+        <li><a href="index.html#members">組織体制</a></li>
+        <li><a href="records.html">活動記録</a></li>
+        <li><a href="kiyaku.html">規約</a></li>
+        <li class="is-story"><a href="story.html">コンセプト</a></li>
+        <li><a class="hd__cta" href="index.html#join">入会案内</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="sec">
+
+  <div class="sec__head">
+    <span class="sec__label">Kumamoto 2026</span>
+    <h1 class="sec__title">令和8年 熊本地震</h1>
+    <p class="sec__note">
+      2026年7月28日16時27分、熊本県熊本地方を震源とするマグニチュード7.1の地震が発生しました。
+      公開されている防災データを目的別に重ね合わせ、<b>URLひとつで開ける形</b>にまとめた、研究会による試作です。
+    </p>
+  </div>
+
+  <div class="notice">
+    <p class="notice__t">はじめにお読みください</p>
+    <ul class="notice__l">
+      <li>
+        <span class="notice__n">!</span>
+        <div>
+          <p class="notice__h">これは研究会による試作です</p>
+          <p class="notice__d">
+            公的な災害情報ではありません。実際の避難や災害対応の判断は、
+            気象庁、自治体、ライフライン事業者など<b>発表元の情報</b>に従ってください。
+            速報値を含むため、後日修正されることがあります。
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="notice__n">2</span>
+        <div>
+          <p class="notice__h">データは、つくった組織から直接届きます</p>
+          <p class="notice__d">
+            気象庁、国土地理院、防災科学技術研究所、厚生労働省──それぞれのサーバから、
+            お手元のブラウザへ<b>直接</b>届きます。中継も加工も挟まないので、
+            各組織が更新した内容がそのまま反映されます。レイヤーごとに取得先のサーバが異なるため、応答が返った順に重なっていきます。
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="notice__n">3</span>
+        <div>
+          <p class="notice__h">一部の地図は会員向けです</p>
+          <p class="notice__d">
+            電力会社の停電情報や、実際に開設された避難所の情報は、
+            提供条件の整理が済んでいないため<b>公開サイトには収録していません</b>。
+            会員向けの地図には含まれており、閲覧には研究会の認証が必要です。
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sets">
+      <article class="set">
+        <div class="set__h">
+          <span class="set__n">1</span>
+          <div><h2 class="set__t">地震の全体像</h2></div>
+        </div>
+        <p class="set__d">推計震度分布に、震源と主要活断層帯を重ねます。どこがどれだけ揺れたのか、その揺れが既知の活断層とどう関係しているのかを、ひとつの地図の上で確かめられます。</p>
+        <p class="set__lt">重ねているレイヤー（3種）</p>
+        <ul class="set__l"><li>気象庁_2021_推計震度分布</li><li>地震情報(JMA)</li><li>防災科研_J_SHIS_確率論的地震動予測地図2020_主要活断層帯</li></ul>
+        <a class="set__go" href="https://svgmap.org/demos/demo1/#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E6%B0%97%E8%B1%A1%E5%BA%81_2021_%E6%8E%A8%E8%A8%88%E9%9C%87%E5%BA%A6%E5%88%86%E5%B8%83,%E5%9C%B0%E9%9C%87%E6%83%85%E5%A0%B1%28JMA%29,%E9%98%B2%E7%81%BD%E7%A7%91%E7%A0%94_J_SHIS_%E7%A2%BA%E7%8E%87%E8%AB%96%E7%9A%84%E5%9C%B0%E9%9C%87%E5%8B%95%E4%BA%88%E6%B8%AC%E5%9C%B0%E5%9B%B32020_%E4%B8%BB%E8%A6%81%E6%B4%BB%E6%96%AD%E5%B1%A4%E5%B8%AF" target="_blank" rel="noopener">この地図を開く</a>
+      </article>
+      <article class="set">
+        <div class="set__h">
+          <span class="set__n">2</span>
+          <div><h2 class="set__t">ライフラインと避難の状況</h2></div>
+        </div>
+        <p class="set__d">揺れの分布に、避難所の位置を重ねます。強く揺れた地域に、避難できる場所がどれだけあるか。会員向けの地図では、これに九州電力の停電情報と、実際に開設された避難所が加わります。</p>
+        <p class="set__lt">重ねているレイヤー（3種）</p>
+        <ul class="set__l"><li>気象庁_2021_推計震度分布</li><li>地理院 指定避難所</li><li>地理院 指定緊急避難場所</li></ul>
+        <a class="set__go" href="https://svgmap.org/demos/demo1/#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E6%B0%97%E8%B1%A1%E5%BA%81_2021_%E6%8E%A8%E8%A8%88%E9%9C%87%E5%BA%A6%E5%88%86%E5%B8%83,%E5%9C%B0%E7%90%86%E9%99%A2%20%E6%8C%87%E5%AE%9A%E9%81%BF%E9%9B%A3%E6%89%80,%E5%9C%B0%E7%90%86%E9%99%A2%20%E6%8C%87%E5%AE%9A%E7%B7%8A%E6%80%A5%E9%81%BF%E9%9B%A3%E5%A0%B4%E6%89%80" target="_blank" rel="noopener">この地図を開く</a>
+        <div class="kset__mem">
+          <p class="kset__memt"><span class="kset__lock">会員向け</span>停電情報・開設避難所つき</p>
+          <ul class="set__l"><li>気象庁_2021_推計震度分布</li><li>九州電力 停電情報</li><li>開設避難所(未来共生災害救援マップ)</li><li>地理院 指定避難所</li></ul>
+          <p class="kset__memd">停電情報と開設避難所は、公開サイトには収録していないレイヤーです。閲覧には研究会の認証が必要です。</p>
+          <a class="kset__go2" href="https://www.svgmap.org/devinfo/devkddi/lvl0.1/d2i2map/mapMashupTester.html#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E6%B0%97%E8%B1%A1%E5%BA%81_2021_%E6%8E%A8%E8%A8%88%E9%9C%87%E5%BA%A6%E5%88%86%E5%B8%83,%E4%B9%9D%E5%B7%9E%E9%9B%BB%E5%8A%9B%20%E5%81%9C%E9%9B%BB%E6%83%85%E5%A0%B1,%E9%96%8B%E8%A8%AD%E9%81%BF%E9%9B%A3%E6%89%80%28%E6%9C%AA%E6%9D%A5%E5%85%B1%E7%94%9F%E7%81%BD%E5%AE%B3%E6%95%91%E6%8F%B4%E3%83%9E%E3%83%83%E3%83%97%29,%E5%9C%B0%E7%90%86%E9%99%A2%20%E6%8C%87%E5%AE%9A%E9%81%BF%E9%9B%A3%E6%89%80" target="_blank" rel="noopener">会員向けの地図を開く</a>
+        </div>
+      </article>
+      <article class="set">
+        <div class="set__h">
+          <span class="set__n">3</span>
+          <div><h2 class="set__t">医療機関への影響</h2></div>
+        </div>
+        <p class="set__d">病院・診療所・薬局に、揺れの分布と土砂災害の警戒区域を重ねます。医療機関そのものが強く揺れた地域や、土砂災害の危険がある場所にないか。優先して確認すべき施設が見えてきます。</p>
+        <p class="set__lt">重ねているレイヤー（4種）</p>
+        <ul class="set__l"><li>厚労省 病院・診療所・薬局</li><li>気象庁_2021_推計震度分布</li><li>急傾斜警戒区域</li><li>土石流警戒区域</li></ul>
+        <a class="set__go" href="https://svgmap.org/demos/demo1/#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E5%8E%9A%E5%8A%B4%E7%9C%81%20%E7%97%85%E9%99%A2%E3%83%BB%E8%A8%BA%E7%99%82%E6%89%80%E3%83%BB%E8%96%AC%E5%B1%80,%E6%B0%97%E8%B1%A1%E5%BA%81_2021_%E6%8E%A8%E8%A8%88%E9%9C%87%E5%BA%A6%E5%88%86%E5%B8%83,%E6%80%A5%E5%82%BE%E6%96%9C%E8%AD%A6%E6%88%92%E5%8C%BA%E5%9F%9F,%E5%9C%9F%E7%9F%B3%E6%B5%81%E8%AD%A6%E6%88%92%E5%8C%BA%E5%9F%9F" target="_blank" rel="noopener">この地図を開く</a>
+      </article>
+      <article class="set">
+        <div class="set__h">
+          <span class="set__n">4</span>
+          <div><h2 class="set__t">交通・物流の寸断リスク</h2></div>
+        </div>
+        <p class="set__d">緊急輸送道路、道路、鉄道、通行規制に、揺れの分布を重ねます。どの幹線が強い揺れを受けたか。支援物資の経路や、迂回の検討にあたっての手がかりになります。</p>
+        <p class="set__lt">重ねているレイヤー（5種）</p>
+        <ul class="set__l"><li>緊急輸送道路</li><li>道路(国土技術研究センター)</li><li>鉄道</li><li>通行規制</li><li>気象庁_2021_推計震度分布</li></ul>
+        <a class="set__go" href="https://svgmap.org/demos/demo1/#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E7%B7%8A%E6%80%A5%E8%BC%B8%E9%80%81%E9%81%93%E8%B7%AF,%E9%81%93%E8%B7%AF%28%E5%9B%BD%E5%9C%9F%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%29,%E9%89%84%E9%81%93,%E9%80%9A%E8%A1%8C%E8%A6%8F%E5%88%B6,%E6%B0%97%E8%B1%A1%E5%BA%81_2021_%E6%8E%A8%E8%A8%88%E9%9C%87%E5%BA%A6%E5%88%86%E5%B8%83" target="_blank" rel="noopener">この地図を開く</a>
+      </article>
+      <article class="set">
+        <div class="set__h">
+          <span class="set__n">5</span>
+          <div><h2 class="set__t">二次災害の警戒（雨と土砂）</h2></div>
+        </div>
+        <p class="set__d">土砂災害の危険度分布に、急傾斜・土石流・地すべりの警戒区域とライブカメラを重ねます。地震で緩んだ地盤に雨が加わったとき、どこを注視すべきか。時間の経過とともに変わる情報です。</p>
+        <p class="set__lt">重ねているレイヤー（5種）</p>
+        <ul class="set__l"><li>危険度分布-土砂災害(JMA)</li><li>急傾斜警戒区域</li><li>土石流警戒区域</li><li>地すべり警戒区域</li><li>ライブカメラ</li></ul>
+        <a class="set__go" href="https://svgmap.org/demos/demo1/#xywh=global:130.15,32.44,1.2,0.62&amp;visibleLayer=%E5%8D%B1%E9%99%BA%E5%BA%A6%E5%88%86%E5%B8%83-%E5%9C%9F%E7%A0%82%E7%81%BD%E5%AE%B3%28JMA%29,%E6%80%A5%E5%82%BE%E6%96%9C%E8%AD%A6%E6%88%92%E5%8C%BA%E5%9F%9F,%E5%9C%9F%E7%9F%B3%E6%B5%81%E8%AD%A6%E6%88%92%E5%8C%BA%E5%9F%9F,%E5%9C%B0%E3%81%99%E3%81%B9%E3%82%8A%E8%AD%A6%E6%88%92%E5%8C%BA%E5%9F%9F,%E3%83%A9%E3%82%A4%E3%83%96%E3%82%AB%E3%83%A1%E3%83%A9" target="_blank" rel="noopener">この地図を開く</a>
+      </article>
+  </div>
+
+  <p class="sets__note">
+    同じ考え方は、災害の種類が変わっても使えます。重ねる組み合わせを変えるだけで、
+    水害にも、台風にも、平時の用途にも応えられます。
+    目的別に整理したレイヤーセットは <a href="layersets.html">こちら</a> をご覧ください。
+  </p>
+
+  <a class="doc__back" href="index.html#works">トップページに戻る</a>
+
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__b">
+      <span>分散型防災データ利活用研究会</span>
+      <span class="ft__c">© Distributed Disaster-Data Utilization Study Group</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

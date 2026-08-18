@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img"
+     aria-label="毎月の研究会のたびに、公開情報の新規レイヤー化、より使いやすいツールの開発、目的別の組み合わせの拡充が重ねられていることを示す仮画像">
+<!-- 表示幅は約329px（縮小率0.21倍）。本文文字は58px以上とし、画面上で12px相当を確保している
+     ・具体の機能名・レイヤー名は会員限定のため、行為の種類のみを記載する
+     ・期限や対応の約束と読める表現は置かない（受託開発の構図に見えるため）
+     ・不具合の修復ではなく、つくり出す側から書く -->
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#eef4fc"/><stop offset="1" stop-color="#dbe7f7"/>
+  </linearGradient>
+</defs>
+
+<rect width="1600" height="900" fill="url(#bg)"/>
+
+<g font-family="'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif">
+
+  <text x="80" y="112" font-size="66" font-weight="700" fill="#005bba">情報拡充・機能追加</text>
+  <text x="80" y="184" font-size="52" fill="#5a6b87">毎月の研究会のたびに ──</text>
+
+  <g>
+    <rect x="80" y="248" width="1440" height="118" rx="14" fill="#fffdf2" stroke="#ffd600" stroke-width="4"/>
+    <circle cx="150" cy="307" r="14" fill="#ffd600"/>
+    <text x="204" y="326" font-size="58" fill="#12203a">公開されている情報を、新しいレイヤーに</text>
+
+    <rect x="80" y="384" width="1440" height="118" rx="14" fill="#fff" stroke="#d6e3f4" stroke-width="3"/>
+    <circle cx="150" cy="443" r="14" fill="#005bba"/>
+    <text x="204" y="462" font-size="58" fill="#12203a">より使いやすいツールをつくる</text>
+
+    <rect x="80" y="520" width="1440" height="118" rx="14" fill="#fff" stroke="#d6e3f4" stroke-width="3"/>
+    <circle cx="150" cy="579" r="14" fill="#005bba"/>
+    <text x="204" y="598" font-size="58" fill="#12203a">目的別の組み合わせを、増やす</text>
+
+    <rect x="80" y="656" width="1440" height="118" rx="14" fill="#fff" stroke="#d6e3f4" stroke-width="3"/>
+    <circle cx="150" cy="715" r="14" fill="#005bba"/>
+    <text x="204" y="734" font-size="58" fill="#12203a">入手先が変わっても、途切れさせない</text>
+  </g>
+
+  <rect x="80" y="800" width="300" height="66" rx="33" fill="#fff" stroke="#c6d7ec" stroke-width="3"/>
+  <text x="230" y="845" font-size="44" fill="#5a6b87" text-anchor="middle">会員限定</text>
+  <text x="410" y="845" font-size="44" fill="#5a6b87">具体の機能名・レイヤー名は会員向けにご案内</text>
+
+  <rect x="1240" y="34" width="320" height="104" rx="52" fill="#ffd600"/>
+  <text x="1400" y="104" font-size="68" font-weight="700" fill="#050a18" text-anchor="middle">仮画像</text>
+</g>
+</svg>
