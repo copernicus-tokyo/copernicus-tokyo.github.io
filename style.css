@@ -22,8 +22,11 @@
   --latin:"Cormorant Garamond",serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-/* 第三章の立体図が数px はみ出すため、ルート側でも横スクロールを抑止する */
-html{scroll-behavior:smooth;overflow-x:hidden}
+/* html と body の両方に overflow-x:hidden を置くと、iOS Safari では
+   スクロール位置が確定せず、指を離した瞬間に先頭へ戻ってしまう。
+   はみ出していた第三章の立体図と最下部の日の出は、それぞれの側で
+   収まるようにしたので、ここでの抑止は不要になった（削除済み） */
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   background:var(--void);
@@ -33,7 +36,6 @@ body{
   line-height:2;
   letter-spacing:.04em;
   font-feature-settings:"palt";
-  overflow-x:hidden;
   /* 日本語を文節の切れ目で折り返す。Chrome/Edgeで有効、
      Safari・Firefoxでは無視され通常の折り返しに戻るだけなので安全 */
   word-break:auto-phrase;
