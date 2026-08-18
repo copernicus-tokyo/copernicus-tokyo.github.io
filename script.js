@@ -122,8 +122,13 @@
   }
 
   /* ================= THREE.JS COSMOS ================= */
+  /* 指で操作する端末（スマートフォン・タブレット）では、
+     ヒーローを静止画にして 3D を使わない。Three.js の読み込み自体を行わないため、
+     通信量・初期化・描画のすべてが不要になる。静止画への差し替えは style.css 側で行う。
+     PC では従来どおり太陽系が回る */
+  var useCosmos = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   var canvas = document.getElementById("cosmos");
-  if(!canvas || typeof THREE === "undefined") return;
+  if(!canvas || !useCosmos) return;
 
   var renderer, scene, camera, orbitGroup, starsA, starsB, planets = [];
   var W = 0, H = 0;
@@ -312,10 +317,24 @@
      した瞬間と重なり、画面が固まったように感じられる。
      ヒーローは背景の演出なので、ページが操作できるようになってから動き出せばよい */
   var started = false;
-  function start(){ if(started) return; started = true; init(); }
+  function start(){
+    if(started) return; started = true;
+    if(typeof THREE === "undefined") return;   /* 読み込みに失敗しても静止画のまま表示される */
+    init();
+  }
+  /* Three.js は必要な端末でだけ、しかもページが操作できるようになってから取りに行く */
+  function loadThree(cb){
+    var s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+    s.async = true;
+    s.onload = cb;
+    s.onerror = function(){ /* 取得できなければ静止画のまま */ };
+    document.head.appendChild(s);
+  }
   function scheduleStart(){
-    if("requestIdleCallback" in window){ requestIdleCallback(start, {timeout:1200}); }
-    else { setTimeout(start, 250); }
+    var go = function(){ loadThree(start); };
+    if("requestIdleCallback" in window){ requestIdleCallback(go, {timeout:1200}); }
+    else { setTimeout(go, 250); }
   }
   if(document.readyState === "complete"){ scheduleStart(); }
   else { window.addEventListener("load", scheduleStart, {once:true}); }

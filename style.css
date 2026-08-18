@@ -111,6 +111,20 @@ a:hover{color:var(--paper)}
   overflow:hidden;
 }
 #cosmos{position:absolute;inset:0;width:100%;height:100%;display:block}
+/* 指で操作する端末では 3D をやめ、同じ絵を静止画として敷く。
+   script.js 側も同じ条件で Three.js を読み込まないようにしている */
+@media (hover:none) and (pointer:coarse){
+  #cosmos{display:none}
+  .hero{
+    background-color:var(--void);
+    background-image:url("hero-tall.jpg");
+    background-size:cover;background-position:center top;background-repeat:no-repeat;
+  }
+  /* 横向きに構えたときは横位置の絵へ */
+  @media (min-aspect-ratio:1/1){
+    .hero{background-image:url("hero-wide.jpg")}
+  }
+}
 .hero__veil{
   position:absolute;inset:0;pointer-events:none;
   background:
