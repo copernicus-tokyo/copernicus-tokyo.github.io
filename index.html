@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=23">
+<link rel="stylesheet" href="home.css?v=24">
 </head>
 <body>
 
@@ -533,7 +533,10 @@
         el.setAttribute("aria-selected", i === cur ? "true" : "false");
       });
     }
-    function start(){ stop(); timer = setInterval(function(){ show(cur+1); }, 6000); }
+    /* 切り替えの間隔（ミリ秒）。1000 で1秒。
+       短くしすぎると読み終わる前に変わってしまうため、4000〜6000 を目安に */
+    var INTERVAL = 5000;
+    function start(){ stop(); timer = setInterval(function(){ show(cur+1); }, INTERVAL); }
     function stop(){ if(timer){ clearInterval(timer); timer = null; } }
 
     dots.forEach(function(el, i){
