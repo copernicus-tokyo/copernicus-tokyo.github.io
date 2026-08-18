@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=24">
+<link rel="stylesheet" href="home.css?v=31">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
     <figure class="shot">
       <div class="shot__bar">
         <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
-        <span class="shot__url">svgmap.org / …</span>
+        <span class="shot__url" id="heroUrl">svgmap.org / …</span>
       </div>
       <!-- 画像の指定は同じフォルダの hero.js を編集してください。
            2枚以上書くと自動で切り替わります（1枚なら静止したまま） -->
@@ -107,9 +107,7 @@
         <img class="shot__img" src="ph-hero.svg" width="1600" height="1000"
              alt="各組織にデータを置いたまま、ブラウザの上で重ね合わせる仕組みの図">
       </div>
-      <figcaption class="shot__cap">
-        1つのURLで、目的に応じたレイヤーの組み合わせをそのまま届けられます。
-      </figcaption>
+      <figcaption class="shot__cap" id="heroCap">1つのURLで、目的に応じたレイヤーの組み合わせをそのまま届けられます。</figcaption>
     </figure>
   </div>
 </section>
@@ -176,71 +174,42 @@
              alt="行政・研究機関・民間・コミュニティのサーバにデータを置いたまま、閲覧者のブラウザの上で重ね合わせる仕組みの図">
         <div class="work__b">
           <h3 class="work__t">SVGMap / LayersWorks</h3>
-          <p class="work__d">
-            各組織のサーバに置かれたままの地図を、閲覧者のブラウザの上で重ね合わせるオープンソースのGIS。
-            この方式を<b>ハイパーレイヤリング</b>と呼びます。250種類以上の防災データレイヤーを実装しており、
-            中央のデータベースを持たないため、どこかが止まっても全体は止まりません。
-          </p>
+          <p class="work__d">各組織のサーバに置かれたままの地図を、閲覧者のブラウザの上で重ね合わせるオープンソースのGIS。この方式を<b>ハイパーレイヤリング</b>と呼びます。250種類以上の防災データレイヤーを実装しており、中央のデータベースを持たないため、どこかが止まっても全体は止まりません。</p>
           <a class="work__more" href="https://svgmap.org/" target="_blank" rel="noopener">SVGMap公式サイト</a>
         </div>
       </article>
-
-      <article class="work rv">
-        <img class="work__img" src="ph-layerset.svg" width="1600" height="900" loading="lazy"
-             alt="避難先・避難経路、広域被害ポテンシャル、交通・サプライチェーン、重要施設の脆弱性、リアルタイム監視の5つのレイヤーセットの構成図">
-        <div class="work__b">
-          <h3 class="work__t">目的別レイヤーセット</h3>
-          <p class="work__d">
-            「何を重ねればよいか」を毎回考えなくて済むよう、目的別の組み合わせを1つのURLにまとめています。
-            避難先・避難経路／広域被害ポテンシャル／交通・サプライチェーン／重要施設／リアルタイム監視の5種を整備中です。
-          </p>
-          <a class="work__more" href="layersets.html">実例を見る</a>
-          <a class="work__more" href="kumamoto.html">令和8年 熊本地震のレイヤーセット</a>
-        </div>
-      </article>
-
-      <article class="work rv">
-        <img class="work__img" src="ph-class.svg" width="1600" height="900" loading="lazy"
-             alt="教室のスクリーンに浸水・土砂災害・公共施設を重ねた地図を映し、生徒が災害リスクのある公共施設を考える授業の図">
-        <div class="work__b">
-          <h3 class="work__t">高校「地理総合」での授業実践</h3>
-          <p class="work__d">
-            浸水・土砂災害に公共施設を重ね、「災害リスクのある公共施設はどこか」を生徒自身に考えさせる授業を実施しました。
-            データを読み解く力を、地域で学び地域で働く人へ手渡す取り組みです。
-          </p>
-        </div>
-      </article>
-
       <article class="work rv">
         <img class="work__img" src="ph-dev.svg" width="1600" height="900" loading="lazy"
              alt="毎月の研究会のたびに、公開情報の新規レイヤー化、より使いやすいツールの開発、目的別の組み合わせの拡充が重ねられていることを示す図">
         <div class="work__b">
           <h3 class="work__t">情報拡充と機能追加</h3>
-          <p class="work__d">
-            ウェブで公開されている情報を、地図に重ねられる<b>レイヤーにする</b>。
-            表やPDF、地図の画像であっても、重ねられるかたちへ持っていきます。
-            あわせて、<b>より使いやすいツール</b>の開発と、目的別の組み合わせの拡充を進めています。
-            毎月の研究会と、その合間の連絡用チャットで、こうしたやりとりが重ねられています。
-            <b>「使いたいデータが足りない」「こんな重ね方はできないか」</b>——
-            持ち寄られた問いが、次の開発の題材になります。
-            250種類以上のレイヤーは、その積み重ねでできています。
-          </p>
-          <p class="work__mem"><span class="work__lock">会員限定</span>個々の機能名や、追加したレイヤーの名称は会員向けにご案内しています。</p>
-          <a class="work__more" href="#join">入会案内</a>
+          <p class="work__d">ウェブで公開されている情報を、地図に重ねられるレイヤーにする。表やPDF、地図の画像であっても、重ねられるかたちへ。より使いやすいツールの開発も、毎月の研究会のたびに進めています。</p>
         </div>
       </article>
-
+      <article class="work rv">
+        <img class="work__img" src="ph-layerset.svg" width="1600" height="900" loading="lazy"
+             alt="避難先・避難経路、広域被害ポテンシャル、交通・サプライチェーン、重要施設の脆弱性、リアルタイム監視の5つのレイヤーセットの構成図">
+        <div class="work__b">
+          <h3 class="work__t">目的別レイヤーセット</h3>
+          <p class="work__d">「何を重ねればよいか」を毎回考えなくて済むよう、目的別の組み合わせを1つのURLにまとめています。避難先・避難経路／広域被害ポテンシャル／交通・サプライチェーン／重要施設／リアルタイム監視の5種を整備中です。</p>
+          <a class="work__more" href="layersets.html">実例を見る</a>
+          <a class="work__more" href="kumamoto.html">令和8年 熊本地震のレイヤーセット</a>
+        </div>
+      </article>
+      <article class="work rv">
+        <img class="work__img" src="ph-class.svg" width="1600" height="900" loading="lazy"
+             alt="教室のスクリーンに浸水・土砂災害・公共施設を重ねた地図を映し、生徒が災害リスクのある公共施設を考える授業の図">
+        <div class="work__b">
+          <h3 class="work__t">高校「地理総合」での授業実践</h3>
+          <p class="work__d">浸水・土砂災害に公共施設を重ね、「災害リスクのある公共施設はどこか」を生徒自身に考えさせる授業を実施しました。データを読み解く力を、地域で学び地域で働く人へ手渡す取り組みです。</p>
+        </div>
+      </article>
       <article class="work rv">
         <img class="work__img" src="ph-seminar.svg" width="1600" height="900" loading="lazy"
              alt="防災・減災オンラインセミナーの告知イメージ。演題と全3部・60分の構成">
         <div class="work__b">
           <h3 class="work__t">防災・減災オンラインセミナー2026</h3>
-          <p class="work__d">
-            「分散する防災データをブラウザでつなぐ ── Web地図「SVGMap」の可能性と実践」と題し、
-            研究会メンバーがリレー形式で登壇します。
-            <b>2026年9月1日（火）〜12月28日（月）</b>配信、参加費無料（事前登録制）。
-            主催は防災ログ実行委員会です。
-          </p>
+          <p class="work__d">「分散する防災データをブラウザでつなぐ ── Web地図「SVGMap」の可能性と実践」と題し、研究会メンバーがリレー形式で登壇します。<b>2026年9月1日（火）〜12月28日（月）</b>配信、参加費無料（事前登録制）。主催は防災ログ実行委員会です。</p>
           <a class="work__more" href="https://bousailog.com/banner_post/online2026/"
              target="_blank" rel="noopener">視聴登録はこちら（防災ログ特設サイト）</a>
         </div>
@@ -478,7 +447,7 @@
 
 <!-- お知らせのデータ。ローカルでファイルを直接開いた場合にも読めるよう、
      テキストファイルではなくスクリプトとして読み込んでいます -->
-<script src="hero.js?v=1"></script>
+<script src="hero.js?v=5"></script>
 <script src="news.js?v=2"></script>
 <script>
 (function(){
@@ -496,7 +465,8 @@
       .filter(function(l){ return l.trim() && l.trim().charAt(0) !== "#"; })
       .map(function(l){
         var c = l.split("	").map(function(s){ return s.trim(); });
-        return { src:c[0], alt:c[1] || "", href:c[2] || "" };
+        return { src:c[0], alt:c[1] || "", href:c[2] || "",
+                 url:c[3] || "", cap:c[4] || "" };
       })
       .filter(function(o){ return o.src; });
     if(items.length < 2) return;          /* 1枚のときはHTMLのまま */
@@ -505,8 +475,10 @@
     items.forEach(function(o, i){
       var img = '<img class="shot__img" src="' + o.src + '" width="1600" height="1000" alt="' +
                 o.alt.replace(/"/g, "&quot;") + '"' + (i ? ' loading="lazy"' : '') + '>';
+      /* 外部のページは新しいタブで開く */
+      var ext = /^https?:/.test(o.href) ? ' target="_blank" rel="noopener"' : '';
       html += '<div class="shot__slide' + (i ? '' : ' is-on') + '" aria-hidden="' + (i ? 'true' : 'false') + '">' +
-              (o.href ? '<a href="' + o.href + '">' + img + '<span class="shot__tag">' +
+              (o.href ? '<a href="' + o.href + '"' + ext + '>' + img + '<span class="shot__tag">' +
                         o.alt.replace(/[<>]/g, "") + '<i>→</i></span></a>' : img) +
               '</div>';
     });
@@ -522,8 +494,17 @@
     var dots   = box.querySelectorAll(".shot__dot2");
     var cur = 0, timer = null;
 
+    var urlEl = document.getElementById("heroUrl");
+    var capEl = document.getElementById("heroCap");
     function show(n){
       cur = (n + slides.length) % slides.length;
+      /* 枠のアドレスと下の説明文は、スライドごとに差し替える。
+         hero.js で指定がなければ、その枠は空にする（前の画像の文言が残らないように） */
+      if(urlEl) urlEl.textContent = items[cur].url;
+      if(capEl){
+        capEl.textContent = items[cur].cap;
+        capEl.style.display = items[cur].cap ? "" : "none";
+      }
       slides.forEach(function(el, i){
         el.classList.toggle("is-on", i === cur);
         el.setAttribute("aria-hidden", i === cur ? "false" : "true");

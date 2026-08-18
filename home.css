@@ -129,7 +129,10 @@ a:hover{text-decoration:underline}
 .shot__bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--bg-tint);
   border-bottom:1px solid var(--line)}
 .shot__dot{width:9px;height:9px;border-radius:50%;background:#cdd6e4}
-.shot__url{margin-left:8px;font-family:var(--latin);font-style:italic;font-size:.72rem;color:var(--ink-soft)}
+/* 枠の見出し。アドレス風にも、「トピックス」のような見出しにも使う。
+   和文が入ると欧文斜体では不自然なので、和文が含まれる場合に備えて書体は本文と同系にする */
+.shot__url{margin-left:8px;font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft)}
+.shot__url:lang(en){font-family:var(--latin);font-style:italic}
 .shot__body{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(160deg,#eaf1fb,#dce8f7);position:relative}
 .shot__ph{text-align:center;color:#8496b3;font-size:.8rem;letter-spacing:.08em;padding:20px}
@@ -207,19 +210,11 @@ img.work__img{display:block;width:100%;height:auto;padding:0;object-fit:cover}
 .shot__img{display:block;width:100%;height:100%;object-fit:cover}
 .work__b{padding:18px 20px 20px}
 .work__t{font-family:var(--mincho);font-weight:700;font-size:1.05rem;letter-spacing:.06em;margin-bottom:8px}
-.work__d{font-size:.87rem;color:var(--ink-soft)}
+/* 幅の狭いカードでは、文節区切りだと右端が大きく余る。ここは幅まで詰める */
+.work__d{font-size:.87rem;color:var(--ink-soft);word-break:normal}
 /* リンクは1行ずつ積む（複数置く場合があるため） */
 .work__more{display:block;margin-top:10px;font-size:.83rem;letter-spacing:.06em}
-/* 会員限定であることの断り */
-.work__mem{
-  margin-top:14px;padding:10px 12px;background:var(--bg-tint);
-  border:1px dashed var(--line);border-radius:4px;
-  font-size:.76rem;line-height:1.75;color:var(--ink-soft);
-}
-.work__lock{
-  display:inline-block;margin-right:8px;padding:1px 9px;border-radius:99px;
-  background:#fff;border:1px solid var(--line);font-size:.7rem;letter-spacing:.06em;
-}
+
 .work__more::after{content:" →"}
 
 /* ---------- 沿革 ---------- */
@@ -428,8 +423,8 @@ a.rec__a:hover{background:#dfecfb;text-decoration:none}
 .shot__tag{
   position:absolute;left:0;right:0;bottom:0;
   background:linear-gradient(to top,rgba(5,10,24,.82),rgba(5,10,24,0));
-  color:#fff;font-size:.8rem;letter-spacing:.06em;line-height:1.6;
-  padding:26px 16px 12px;display:flex;align-items:center;gap:8px;
+  color:#fff;font-size:.76rem;letter-spacing:.04em;line-height:1.55;
+  padding:20px 14px 10px;display:flex;align-items:center;gap:8px;
 }
 .shot__tag i{font-style:normal;transition:transform .3s}
 .shot__slide a:hover .shot__tag i{transform:translateX(4px)}
