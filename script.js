@@ -122,13 +122,8 @@
   }
 
   /* ================= THREE.JS COSMOS ================= */
-  /* 指で操作する端末（スマートフォン・タブレット）では、
-     ヒーローを静止画にして 3D を使わない。Three.js の読み込み自体を行わないため、
-     通信量・初期化・描画のすべてが不要になる。静止画への差し替えは style.css 側で行う。
-     PC では従来どおり太陽系が回る */
-  var useCosmos = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   var canvas = document.getElementById("cosmos");
-  if(!canvas || !useCosmos) return;
+  if(!canvas) return;
 
   var renderer, scene, camera, orbitGroup, starsA, starsB, planets = [];
   var W = 0, H = 0;
@@ -328,7 +323,10 @@
     s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
     s.async = true;
     s.onload = cb;
-    s.onerror = function(){ /* 取得できなければ静止画のまま */ };
+    s.onerror = function(){
+      /* 取得できなかったときは静止画に切り替える（style.css の html.no-cosmos） */
+      document.documentElement.classList.add("no-cosmos");
+    };
     document.head.appendChild(s);
   }
   function scheduleStart(){
