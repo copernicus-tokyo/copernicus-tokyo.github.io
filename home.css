@@ -459,6 +459,15 @@ a.rec__a:hover{background:#dfecfb;text-decoration:none}
   padding:20px 14px 10px;display:flex;align-items:center;gap:8px;
 }
 .shot__tag i{font-style:normal;transition:transform .3s}
+/* 説明帯を出さない画像（hero.js で説明文の頭に * を付けたもの）。
+   押せることだけを示す矢印を、画像の右上に小さく置く。
+   バナーは文字が下部にあるため、下ではなく上に逃がしている */
+.shot__tag--min{left:auto;top:0;bottom:auto;background:none;padding:12px 12px 0 0}
+.shot__tag--min i{
+  display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:rgba(5,10,24,.5);color:#fff;font-size:.9rem;line-height:1;
+}
+.shot__slide a:hover .shot__tag--min i{background:rgba(5,10,24,.72)}
 .shot__slide a:hover .shot__tag i{transform:translateX(4px)}
 .shot__dots{position:absolute;right:10px;bottom:10px;display:flex;gap:7px;z-index:2}
 .shot__dot2{

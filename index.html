@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=36">
+<link rel="stylesheet" href="home.css?v=37">
 </head>
 <body>
 
@@ -457,7 +457,7 @@
 
 <!-- お知らせのデータ。ローカルでファイルを直接開いた場合にも読めるよう、
      テキストファイルではなくスクリプトとして読み込んでいます -->
-<script src="hero.js?v=8"></script>
+<script src="hero.js?v=9"></script>
 <script src="news.js?v=2"></script>
 <script>
 (function(){
@@ -475,7 +475,13 @@
       .filter(function(l){ return l.trim() && l.trim().charAt(0) !== "#"; })
       .map(function(l){
         var c = l.split("	").map(function(s){ return s.trim(); });
-        return { src:c[0], alt:c[1] || "", href:c[2] || "",
+        var a = c[1] || "";
+        /* 説明文が * で始まる画像は、画像に重なる説明帯を出さない。
+           （バナーのように、文字が画像の中にすでに入っている場合）
+           * を外した文は、読み上げソフト用の説明として使う */
+        var bare = a.charAt(0) === "*";
+        if (bare) a = a.slice(1).replace(/^[ 　]+/, "");
+        return { src:c[0], alt:a, bare:bare, href:c[2] || "",
                  url:c[3] || "", cap:c[4] || "" };
       })
       .filter(function(o){ return o.src; });
@@ -488,8 +494,11 @@
       /* 外部のページは新しいタブで開く */
       var ext = /^https?:/.test(o.href) ? ' target="_blank" rel="noopener"' : '';
       html += '<div class="shot__slide' + (i ? '' : ' is-on') + '" aria-hidden="' + (i ? 'true' : 'false') + '">' +
-              (o.href ? '<a href="' + o.href + '"' + ext + '>' + img + '<span class="shot__tag">' +
-                        o.alt.replace(/[<>]/g, "") + '<i>→</i></span></a>' : img) +
+              (o.href ? '<a href="' + o.href + '"' + ext + '>' + img +
+                        (o.bare
+                          ? '<span class="shot__tag shot__tag--min"><i>→</i></span>'
+                          : '<span class="shot__tag">' + o.alt.replace(/[<>]/g, "") + '<i>→</i></span>') +
+                        '</a>' : img) +
               '</div>';
     });
     html += '<div class="shot__dots" role="tablist" aria-label="トップ画像の切り替え">';
