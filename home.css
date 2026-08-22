@@ -170,6 +170,10 @@ a:hover{text-decoration:underline}
   letter-spacing:.08em;text-align:center;padding:16px;border-bottom:1px solid var(--line)}
 /* 画像を入れた場合。未差し替えの div 枠と両立させるため img だけを上書きする */
 img.work__img{display:block;width:100%;height:auto;padding:0;object-fit:cover}
+/* 提供素材など、枠と縦横比が合わない画像。切り取らず全体を見せる。
+   左右の余白はバナー端の色に合わせているため、継ぎ目が目立たない */
+img.work__img--fit{aspect-ratio:16/9;height:auto;object-fit:contain;
+  background:linear-gradient(135deg,#e692af 0%,#cd8fb8 35%,#a10386 75%,#670584 100%)}
 /* ---------- 目的別レイヤーセット（layersets.html） ---------- */
 .sets{display:grid;gap:16px}
 .set{border:1px solid var(--line);border-radius:5px;background:#fff;padding:24px clamp(20px,3vw,28px)}
@@ -212,6 +216,29 @@ img.work__img{display:block;width:100%;height:auto;padding:0;object-fit:cover}
 .work__t{font-family:var(--mincho);font-weight:700;font-size:1.05rem;letter-spacing:.06em;margin-bottom:8px}
 /* 幅の狭いカードでは、文節区切りだと右端が大きく余る。ここは幅まで詰める */
 .work__d{font-size:.87rem;color:var(--ink-soft);word-break:normal}
+/* ---------- 外部リンクの目印 ---------- */
+/* 新しいタブで開くリンクには矢印を添える。コンセプトページと同じ作法。
+   ヒーローの画像リンクだけは、画像の後ろに矢印が出てしまうため除外する */
+a[target="_blank"]::after{
+  content:"↗";
+  display:inline-block;
+  font-size:.72em;
+  margin-left:.28em;
+  color:var(--blue);
+  opacity:.72;
+  vertical-align:.06em;
+  transition:opacity .25s,transform .25s;
+}
+a[target="_blank"]:hover::after{opacity:1;transform:translate(1px,-1px)}
+/* 濃い背景のボタンでは、下地に合わせて白抜きにする */
+.btn--fill[target="_blank"]::after{color:#fff;opacity:.85}
+/* 画像を包むリンク（ヒーローのスライド）には出さない */
+.shot__slide a[target="_blank"]::after{content:none}
+
+/* 論文の書誌事項。本文より小さく、区別できるように */
+.work__cite{font-size:.78rem;color:#7a8598;line-height:1.75;margin-top:10px;
+  padding-top:10px;border-top:1px solid var(--line);word-break:normal}
+.work__cite i{font-style:normal;font-weight:500;color:#5a6b87}
 /* リンクは1行ずつ積む（複数置く場合があるため） */
 .work__more{display:block;margin-top:10px;font-size:.83rem;letter-spacing:.06em}
 

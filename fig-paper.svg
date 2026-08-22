@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img"
+     aria-label="デジタルアーカイブと法令をつなぐ図。左に資料の書架、右に条文の頁を置き、その間を「複製しない・リンクするだけ」という一本の線が結んでいることを示す図">
+<defs>
+  <linearGradient id="paperbg" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0" stop-color="#faf7f0"/>
+    <stop offset="1" stop-color="#eae3d5"/>
+  </linearGradient>
+  <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7fb2e8"/>
+    <stop offset="1" stop-color="#4a86c8"/>
+  </linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#005bba" stop-opacity="0"/>
+    <stop offset="0.5" stop-color="#005bba" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#005bba" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="1600" height="900" fill="url(#paperbg)"/>
+
+<!-- ══ 見出し ══ -->
+<text x="80" y="104" font-family="serif" font-size="72" font-weight="700"
+      fill="#1a1408" letter-spacing="6">複製せずに、重ねて使う</text>
+<text x="80" y="164" font-family="sans-serif" font-size="44"
+      fill="#6b5f47" letter-spacing="3">デジタルアーカイブと著作権法の接点を論じた査読論文</text>
+<rect x="80" y="196" width="120" height="8" fill="#c0392b"/>
+
+<!-- ══ 左：デジタルアーカイブ（書架） ══ -->
+<text x="80" y="286" font-family="sans-serif" font-size="46" font-weight="700"
+      fill="#8a6f3d" letter-spacing="8">ARCHIVE</text>
+<text x="80" y="342" font-family="sans-serif" font-size="44" fill="#4a4133">各組織が公開する資料</text>
+
+<!-- 書架の枠 -->
+<rect x="76" y="378" width="560" height="410" rx="6" fill="#e3d9c6" stroke="#c3b394" stroke-width="4"/>
+<line x1="76" y1="516" x2="636" y2="516" stroke="#c3b394" stroke-width="4"/>
+<line x1="76" y1="654" x2="636" y2="654" stroke="#c3b394" stroke-width="4"/>
+
+<!-- 1段目：紙の背表紙 -->
+<g>
+  <rect x="104" y="400" width="46" height="100" rx="3" fill="#b9483f"/>
+  <rect x="158" y="392" width="34" height="108" rx="3" fill="#c98a2e"/>
+  <rect x="200" y="404" width="52" height="96" rx="3" fill="#3f6b8f"/>
+  <rect x="260" y="396" width="30" height="104" rx="3" fill="#7b6a4e"/>
+  <rect x="298" y="400" width="44" height="100" rx="3" fill="#5f8a5c"/>
+</g>
+<!-- 1段目の右：デジタル化されたタイル -->
+<g fill="url(#tile)">
+  <rect x="376" y="400" width="46" height="46" rx="4"/><rect x="430" y="400" width="46" height="46" rx="4" opacity=".8"/>
+  <rect x="484" y="400" width="46" height="46" rx="4" opacity=".62"/><rect x="538" y="400" width="46" height="46" rx="4" opacity=".42"/>
+  <rect x="376" y="454" width="46" height="46" rx="4" opacity=".78"/><rect x="430" y="454" width="46" height="46" rx="4" opacity=".6"/>
+  <rect x="484" y="454" width="46" height="46" rx="4" opacity=".44"/><rect x="538" y="454" width="46" height="46" rx="4" opacity=".26"/>
+</g>
+
+<!-- 2段目 -->
+<g>
+  <rect x="104" y="536" width="36" height="102" rx="3" fill="#3f6b8f"/>
+  <rect x="148" y="530" width="50" height="108" rx="3" fill="#8a6f3d"/>
+  <rect x="206" y="540" width="32" height="98" rx="3" fill="#b9483f"/>
+</g>
+<g fill="url(#tile)">
+  <rect x="256" y="538" width="46" height="46" rx="4" opacity=".85"/><rect x="310" y="538" width="46" height="46" rx="4" opacity=".7"/>
+  <rect x="364" y="538" width="46" height="46" rx="4" opacity=".55"/><rect x="418" y="538" width="46" height="46" rx="4" opacity=".4"/>
+  <rect x="472" y="538" width="46" height="46" rx="4" opacity=".28"/><rect x="526" y="538" width="46" height="46" rx="4" opacity=".18"/>
+  <rect x="256" y="592" width="46" height="46" rx="4" opacity=".62"/><rect x="310" y="592" width="46" height="46" rx="4" opacity=".5"/>
+  <rect x="364" y="592" width="46" height="46" rx="4" opacity=".36"/><rect x="418" y="592" width="46" height="46" rx="4" opacity=".24"/>
+</g>
+
+<!-- 3段目 -->
+<g>
+  <rect x="104" y="674" width="44" height="100" rx="3" fill="#5f8a5c"/>
+  <rect x="156" y="668" width="30" height="106" rx="3" fill="#c98a2e"/>
+</g>
+<g fill="url(#tile)">
+  <rect x="200" y="676" width="46" height="46" rx="4" opacity=".8"/><rect x="254" y="676" width="46" height="46" rx="4" opacity=".64"/>
+  <rect x="308" y="676" width="46" height="46" rx="4" opacity=".5"/><rect x="362" y="676" width="46" height="46" rx="4" opacity=".38"/>
+  <rect x="416" y="676" width="46" height="46" rx="4" opacity=".26"/><rect x="470" y="676" width="46" height="46" rx="4" opacity=".16"/>
+  <rect x="200" y="730" width="46" height="44" rx="4" opacity=".55"/><rect x="254" y="730" width="46" height="44" rx="4" opacity=".42"/>
+  <rect x="308" y="730" width="46" height="44" rx="4" opacity=".3"/>
+</g>
+
+<text x="76" y="836" font-family="sans-serif" font-size="40" fill="#8a7c62">原本は、置かれた場所から動かない</text>
+
+<!-- ══ 中央：リンクの線 ══ -->
+<rect x="660" y="576" width="264" height="7" fill="url(#fade)"/>
+<circle cx="792" cy="580" r="38" fill="#005bba"/>
+<path d="M778,580 a14,14 0 0 1 14,-14 h8 a14,14 0 0 1 0,28 h-8 a14,14 0 0 1 -14,-14 z
+         M806,580 a14,14 0 0 1 -14,14 h-8 a14,14 0 0 1 0,-28 h8"
+      fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+<text x="792" y="512" text-anchor="middle" font-family="sans-serif" font-size="38"
+      font-weight="700" fill="#005bba" letter-spacing="2">リンクするだけ</text>
+<text x="792" y="660" text-anchor="middle" font-family="sans-serif" font-size="38"
+      fill="#6b5f47" letter-spacing="2">複製は生じない</text>
+
+<!-- ══ 右：法令の頁 ══ -->
+<text x="964" y="286" font-family="sans-serif" font-size="46" font-weight="700"
+      fill="#8a6f3d" letter-spacing="8">LAW</text>
+<text x="964" y="342" font-family="sans-serif" font-size="44" fill="#4a4133">著作権法上の位置づけ</text>
+
+<rect x="960" y="378" width="560" height="410" rx="6" fill="#ffffff" stroke="#c3b394" stroke-width="4"/>
+<rect x="960" y="378" width="14" height="410" rx="6" fill="#e3d9c6"/>
+
+<g font-family="serif" fill="#2b2417">
+  <text x="1006" y="446" font-size="44" font-weight="700">第二十一条</text>
+  <text x="1006" y="502" font-size="40" fill="#5a5140">著作者は、その著作物を</text>
+  <text x="1006" y="548" font-size="40" fill="#5a5140">複製する権利を専有する</text>
+</g>
+<g stroke="#e0d8c8" stroke-width="3">
+  <line x1="1006" y1="586" x2="1476" y2="586"/>
+  <line x1="1006" y1="628" x2="1400" y2="628"/>
+  <line x1="1006" y1="670" x2="1454" y2="670"/>
+</g>
+
+<!-- 朱印 -->
+<g transform="rotate(-9 1394 726)">
+  <rect x="1330" y="662" width="128" height="128" rx="10" fill="none" stroke="#c0392b" stroke-width="9"/>
+  <text x="1394" y="710" text-anchor="middle" font-family="serif" font-size="46"
+        font-weight="700" fill="#c0392b">該当</text>
+  <text x="1394" y="762" text-anchor="middle" font-family="serif" font-size="46"
+        font-weight="700" fill="#c0392b">せず</text>
+</g>
+
+<text x="960" y="836" font-family="sans-serif" font-size="40" fill="#8a7c62">条文に照らして、論点を整理した</text>
+</svg>

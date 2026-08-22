@@ -34,7 +34,7 @@
     "name": "一般社団法人分散型防災データ利活用協議会",
     "url": "https://copernicus.gr.jp/"
   },
-  "knowsAbout": ["防災データ", "ハイパーレイヤリング", "SVGMap", "分散型GIS", "ハザードマップ", "フェーズフリー防災", "防災OSINT", "オープンデータ"]
+  "knowsAbout": ["防災データ", "ハイパーレイヤリング", "ハイパーレイヤリングマップ", "分散型GIS", "ハザードマップ", "フェーズフリー防災", "防災OSINT", "オープンデータ"]
 }
 </script>
 <!-- SEO:end -->
@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=31">
+<link rel="stylesheet" href="home.css?v=34">
 </head>
 <body>
 
@@ -99,12 +99,12 @@
     <figure class="shot">
       <div class="shot__bar">
         <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
-        <span class="shot__url" id="heroUrl">svgmap.org / …</span>
+        <span class="shot__url" id="heroUrl">hyperlayering.org / …</span>
       </div>
       <!-- 画像の指定は同じフォルダの hero.js を編集してください。
            2枚以上書くと自動で切り替わります（1枚なら静止したまま） -->
       <div class="shot__body" id="heroShot">
-        <img class="shot__img" src="ph-hero.svg" width="1600" height="1000"
+        <img class="shot__img" src="fig-hero.svg" width="1600" height="1000"
              alt="各組織にデータを置いたまま、ブラウザの上で重ね合わせる仕組みの図">
       </div>
       <figcaption class="shot__cap" id="heroCap">1つのURLで、目的に応じたレイヤーの組み合わせをそのまま届けられます。</figcaption>
@@ -132,7 +132,7 @@
       <span class="sec__label">About</span>
       <h2 class="sec__title">なぜ、現場で使われないのか。</h2>
       <p class="sec__note">
-        ハザードマップ、ライフライン、交通、避難所。研究機関の災害情報システムや、行政・企業が業務で使うシステムに、
+        ハザードマップ、ライフライン、道路閉鎖、避難所。研究機関や行政、企業が使う災害情報システムに、
         防災に役立つデータはすでに数多く存在します。
         それでも現場で使われないのは、技術ではなく、集約を前提とした仕組みと、それを支える制度に理由があります。
         本研究会は、データを持つ側と使う側、制度をつくる側と問い直す側が同じ円卓について、その隘路を具体的に解いていく場です。
@@ -170,16 +170,16 @@
     <div class="works">
 
       <article class="work rv">
-        <img class="work__img" src="ph-svgmap.svg" width="1600" height="900" loading="lazy"
+        <img class="work__img" src="fig-hyperlayering.svg" width="1600" height="900" loading="lazy"
              alt="行政・研究機関・民間・コミュニティのサーバにデータを置いたまま、閲覧者のブラウザの上で重ね合わせる仕組みの図">
         <div class="work__b">
-          <h3 class="work__t">SVGMap / LayersWorks</h3>
+          <h3 class="work__t">ハイパーレイヤリングマップ</h3>
           <p class="work__d">各組織のサーバに置かれたままの地図を、閲覧者のブラウザの上で重ね合わせるオープンソースのGIS。この方式を<b>ハイパーレイヤリング</b>と呼びます。250種類以上の防災データレイヤーを実装しており、中央のデータベースを持たないため、どこかが止まっても全体は止まりません。</p>
-          <a class="work__more" href="https://svgmap.org/" target="_blank" rel="noopener">SVGMap公式サイト</a>
+          <a class="work__more" href="https://hyperlayering.org/" target="_blank" rel="noopener">ハイパーレイヤリングマップ公式サイト</a>
         </div>
       </article>
       <article class="work rv">
-        <img class="work__img" src="ph-dev.svg" width="1600" height="900" loading="lazy"
+        <img class="work__img" src="fig-dev.svg" width="1600" height="900" loading="lazy"
              alt="毎月の研究会のたびに、公開情報の新規レイヤー化、より使いやすいツールの開発、目的別の組み合わせの拡充が重ねられていることを示す図">
         <div class="work__b">
           <h3 class="work__t">情報拡充と機能追加</h3>
@@ -187,7 +187,7 @@
         </div>
       </article>
       <article class="work rv">
-        <img class="work__img" src="ph-layerset.svg" width="1600" height="900" loading="lazy"
+        <img class="work__img" src="fig-layerset.svg" width="1600" height="900" loading="lazy"
              alt="避難先・避難経路、広域被害ポテンシャル、交通・サプライチェーン、重要施設の脆弱性、リアルタイム監視の5つのレイヤーセットの構成図">
         <div class="work__b">
           <h3 class="work__t">目的別レイヤーセット</h3>
@@ -197,7 +197,7 @@
         </div>
       </article>
       <article class="work rv">
-        <img class="work__img" src="ph-class.svg" width="1600" height="900" loading="lazy"
+        <img class="work__img" src="fig-class.svg" width="1600" height="900" loading="lazy"
              alt="教室のスクリーンに浸水・土砂災害・公共施設を重ねた地図を映し、生徒が災害リスクのある公共施設を考える授業の図">
         <div class="work__b">
           <h3 class="work__t">高校「地理総合」での授業実践</h3>
@@ -205,8 +205,18 @@
         </div>
       </article>
       <article class="work rv">
-        <img class="work__img" src="ph-seminar.svg" width="1600" height="900" loading="lazy"
-             alt="防災・減災オンラインセミナーの告知イメージ。演題と全3部・60分の構成">
+        <img class="work__img" src="fig-paper.svg" width="1600" height="900" loading="lazy"
+             alt="各組織のサーバに置かれたままの地図データを、閲覧者のブラウザの上でのみ重ね合わせる仕組みの図。サーバ間で複製が生じないことを示す">
+        <div class="work__b">
+          <h3 class="work__t">査読論文：著作権法上の位置づけ</h3>
+          <p class="work__d">地図データを重ねて使うとき、著作権法上の複製にあたるのかという論点があります。研究会メンバーによる査読論文が、<b>複製を伴わないリンク表示であれば複製にあたらない</b>ことを整理し、運用上の留意点とともに示しました。デジタルアーカイブ学会誌に掲載されています。</p>
+          <p class="work__cite">三浦伸也・高木悟・福井健策・目黒公郎・柴山明寛・柴田一雄・瀧田佐登子「ハイパーレイヤリングによる地図データの防災活用と著作権法上の課題：複製を伴わないリンク表示の合法性と運用上の留意点」<i>デジタルアーカイブ学会誌</i> 第10巻3号、2026年、e22–e32頁。</p>
+          <a class="work__more" href="https://doi.org/10.24506/jsda.10.3_e22" target="_blank" rel="noopener">論文を読む（DOI）</a>
+        </div>
+      </article>
+      <article class="work rv">
+        <img class="work__img work__img--fit" src="bosailog.png" width="640" height="620" loading="lazy"
+             alt="防災・減災オンラインセミナー2026の告知バナー。専門家14団体が特別講演。2026年9月1日（火）〜12月28日（月）、参加無料、オンライン開催、CPD認定プログラム">
         <div class="work__b">
           <h3 class="work__t">防災・減災オンラインセミナー2026</h3>
           <p class="work__d">「分散する防災データをブラウザでつなぐ ── Web地図「SVGMap」の可能性と実践」と題し、研究会メンバーがリレー形式で登壇します。<b>2026年9月1日（火）〜12月28日（月）</b>配信、参加費無料（事前登録制）。主催は防災ログ実行委員会です。</p>
@@ -434,7 +444,7 @@
         <div class="ft__h">関連</div>
         <ul class="ft__l">
           <li><a href="https://copernicus.gr.jp" target="_blank" rel="noopener">一般社団法人 分散型防災データ利活用協議会</a></li>
-          <li><a href="https://svgmap.org/" target="_blank" rel="noopener">SVGMap</a></li>
+          <li><a href="https://hyperlayering.org/" target="_blank" rel="noopener">ハイパーレイヤリングマップ</a></li>
         </ul>
       </div>
     </div>
@@ -447,7 +457,7 @@
 
 <!-- お知らせのデータ。ローカルでファイルを直接開いた場合にも読めるよう、
      テキストファイルではなくスクリプトとして読み込んでいます -->
-<script src="hero.js?v=5"></script>
+<script src="hero.js?v=6"></script>
 <script src="news.js?v=2"></script>
 <script>
 (function(){
