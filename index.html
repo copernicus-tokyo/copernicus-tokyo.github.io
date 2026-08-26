@@ -33,7 +33,27 @@
     "@type": "Organization",
     "name": "一般社団法人分散型防災データ利活用協議会"
   },
-  "knowsAbout": ["防災データ", "ハイパーレイヤリング", "ハイパーレイヤリングマップ", "分散型GIS", "ハザードマップ", "フェーズフリー防災", "防災OSINT", "オープンデータ"]
+  "knowsAbout": ["防災データ", "ハイパーレイヤリング", "ハイパーレイヤリングマップ", "分散型GIS", "ハザードマップ", "フェーズフリー防災", "防災OSINT", "オープンデータ"],
+  "citation": {
+    "@type": "ScholarlyArticle",
+    "name": "ハイパーレイヤリングによる地図データの防災活用と著作権法上の課題：複製を伴わないリンク表示の合法性と運用上の留意点",
+    "author": [
+      { "@type": "Person", "name": "三浦 伸也" },
+      { "@type": "Person", "name": "高木 悟" },
+      { "@type": "Person", "name": "福井 健策" },
+      { "@type": "Person", "name": "目黒 公郎" },
+      { "@type": "Person", "name": "柴山 明寛" },
+      { "@type": "Person", "name": "柴田 一雄" },
+      { "@type": "Person", "name": "瀧田 佐登子" }
+    ],
+    "isPartOf": { "@type": "Periodical", "name": "デジタルアーカイブ学会誌" },
+    "volumeNumber": "10",
+    "issueNumber": "3",
+    "datePublished": "2026",
+    "pagination": "e22-e32",
+    "identifier": "https://doi.org/10.24506/jsda.10.3_e22",
+    "url": "https://doi.org/10.24506/jsda.10.3_e22"
+  }
 }
 </script>
 <!-- SEO:end -->
@@ -42,7 +62,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <!-- home.css を書き換えたら、末尾の数字を1つ増やしてください -->
-<link rel="stylesheet" href="home.css?v=38">
+<link rel="stylesheet" href="home.css?v=39">
 </head>
 <body>
 
@@ -203,13 +223,14 @@
           <p class="work__d">浸水・土砂災害に公共施設を重ね、「災害リスクのある公共施設はどこか」を生徒自身に考えさせる授業を実施しました。データを読み解く力を、地域で学び地域で働く人へ手渡す取り組みです。</p>
         </div>
       </article>
-      <article class="work rv">
+      <!-- 書誌情報は表示しない。カードが縦に伸びるため、data-citation とJSON-LDに持たせている -->
+      <article class="work rv" data-citation="三浦伸也・高木悟・福井健策・目黒公郎・柴山明寛・柴田一雄・瀧田佐登子「ハイパーレイヤリングによる地図データの防災活用と著作権法上の課題：複製を伴わないリンク表示の合法性と運用上の留意点」デジタルアーカイブ学会誌 第10巻3号、2026年、e22–e32頁。"
+               data-doi="10.24506/jsda.10.3_e22">
         <img class="work__img" src="fig-paper.svg" width="1600" height="900" loading="lazy"
              alt="各組織のサーバに置かれたままの地図データを、閲覧者のブラウザの上でのみ重ね合わせる仕組みの図。サーバ間で複製が生じないことを示す">
         <div class="work__b">
           <h3 class="work__t">査読論文：著作権法上の位置づけ</h3>
           <p class="work__d">地図データを重ねて使うとき、著作権法上の複製にあたるのかという論点があります。研究会メンバーによる査読論文が、<b>複製を伴わないリンク表示であれば複製にあたらない</b>ことを整理し、運用上の留意点とともに示しました。デジタルアーカイブ学会誌に掲載されています。</p>
-          <p class="work__cite">三浦伸也・高木悟・福井健策・目黒公郎・柴山明寛・柴田一雄・瀧田佐登子「ハイパーレイヤリングによる地図データの防災活用と著作権法上の課題：複製を伴わないリンク表示の合法性と運用上の留意点」<i>デジタルアーカイブ学会誌</i> 第10巻3号、2026年、e22–e32頁。</p>
           <a class="work__more" href="https://doi.org/10.24506/jsda.10.3_e22" target="_blank" rel="noopener">論文を読む（DOI）</a>
         </div>
       </article>
@@ -374,13 +395,13 @@
       <div class="join__c rv">
         <h3 class="join__t">個人会員</h3>
         <p class="join__d">研究者・技術者・行政職員・学生など、個人としてご参加いただく形です。研究会への出席と資料の閲覧ができます。</p>
-        <a class="btn btn--fill" href="https://forms.gle/JLd8Z2JUJPJvhW1V6"
+        <a class="btn btn--fill" href="https://docs.google.com/forms/d/e/1FAIpQLSdOlF8jZ-tLmGzOeHxR-rBc-UdF2_WeC-7fi5ABZqQSvOvMQw/viewform"
            target="_blank" rel="noopener">入会を申し込む</a>
       </div>
       <div class="join__c rv">
         <h3 class="join__t">組織会員</h3>
         <p class="join__d">企業・自治体・団体としてご参加いただく形です。複数名での出席、分科会への参加が可能です。</p>
-        <a class="btn btn--line" href="https://forms.gle/HcieNfyQB89ZVWwMA"
+        <a class="btn btn--line" href="https://docs.google.com/forms/d/e/1FAIpQLSdcbIn1FHETQGUpBhVxq96m0Fc4Jzv81zRjyqywgv9YxIB4LQ/viewform"
            target="_blank" rel="noopener">入会を申し込む</a>
       </div>
     </div>

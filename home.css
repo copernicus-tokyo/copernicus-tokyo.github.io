@@ -240,10 +240,9 @@ a[target="_blank"]:hover::after{opacity:1;transform:translate(1px,-1px)}
 /* 画像を包むリンク（ヒーローのスライド）には出さない */
 .shot__slide a[target="_blank"]::after{content:none}
 
-/* 論文の書誌事項。本文より小さく、区別できるように */
-.work__cite{font-size:.78rem;color:#7a8598;line-height:1.75;margin-top:10px;
-  padding-top:10px;border-top:1px solid var(--line);word-break:normal}
-.work__cite i{font-style:normal;font-weight:500;color:#5a6b87}
+/* 書誌事項は表示しない方針に変更（2026-08-26）。
+   カードが縦に伸びるため、index.html の data-citation とJSON-LDに持たせている。
+   .work__cite / .work__cite i のルールは未使用のため削除した。 */
 /* リンクは1行ずつ積む（複数置く場合があるため） */
 .work__more{display:block;margin-top:10px;font-size:.83rem;letter-spacing:.06em}
 
