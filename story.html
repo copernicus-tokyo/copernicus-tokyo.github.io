@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>分散型防災データ利活用研究会 — A Copernican Turn in Disaster Data</title>
 <meta name="description" content="データを一箇所に集める天動説をやめ、分散したまま重ね合わせる地動説へ。防災をコストからバリューに変える、分散型防災データ利活用研究会。">
+<!-- サイトの企画・執筆・デザイン・実装。発行主体は研究会（下部のJSON-LDを参照） -->
+<meta name="author" content="古屋 貴司 (Takashi Furuya)">
 <!-- SEO:start -->
 <link rel="canonical" href="https://copernicus-tokyo.github.io/story.html">
 <meta property="og:type" content="article">
@@ -27,6 +29,38 @@
 <!-- style.css / script.js を書き換えたら、末尾の数字を1つ増やしてください。
      ブラウザが古い内容を表示し続けるのを防ぐための版数です。 -->
 <link rel="stylesheet" href="style.css?v=17">
+
+<!--
+  このページの制作クレジット。
+  author（＝creator）は個人、publisher は研究会。両者を分けておく。
+  schema.org の producer は音楽アルバム・映画・TV/ラジオ番組などの制作を
+  想定した語で、ウェブサイトには合わない。director は映像作品向け。
+  @id は index.html 側の Organization / WebSite / Person と同じものを指す。
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://copernicus-tokyo.github.io/story.html#webpage",
+  "name": "分散型防災データ利活用研究会 — A Copernican Turn in Disaster Data",
+  "url": "https://copernicus-tokyo.github.io/story.html",
+  "inLanguage": "ja",
+  "isPartOf": { "@id": "https://copernicus-tokyo.github.io/#website" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://copernicus-tokyo.github.io/#organization",
+    "name": "分散型防災データ利活用研究会",
+    "url": "https://copernicus-tokyo.github.io/"
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://copernicus-tokyo.github.io/#furuya",
+    "name": "古屋 貴司",
+    "alternateName": "Takashi Furuya"
+  },
+  "creator": { "@id": "https://copernicus-tokyo.github.io/#furuya" }
+}
+</script>
 </head>
 <body>
 

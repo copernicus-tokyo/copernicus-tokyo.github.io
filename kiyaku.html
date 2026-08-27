@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>研究会規約 — 分散型防災データ利活用研究会</title>
 <meta name="description" content="分散型防災データ利活用研究会（COPERNICUS研究会）の規約全文。2024年3月28日制定。">
+<!-- ページの企画・デザイン・実装。規約そのものの制定主体は研究会（下部のJSON-LDを参照） -->
+<meta name="author" content="古屋 貴司 (Takashi Furuya)">
 <!-- SEO:start -->
 <link rel="canonical" href="https://copernicus-tokyo.github.io/kiyaku.html">
 <meta property="og:type" content="article">
@@ -24,7 +26,54 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="home.css?v=38">
+<link rel="stylesheet" href="home.css?v=39">
+
+<!--
+  このページの制作クレジット。
+  author（＝creator）は個人、publisher は研究会。両者を分けておく。
+
+  【重要】規約そのものを書いたのは研究会であって、個人ではない。
+  ページの author に個人名を置くだけだと「規約を個人が定めた」と
+  読める余地が残るため、mainEntity として規約を独立させ、
+  その creator を研究会にしている。
+
+  schema.org の producer は音楽アルバム・映画・TV/ラジオ番組などの制作を
+  想定した語で、ウェブサイトには合わない。director は映像作品向け。
+  @id は index.html 側の Organization / WebSite / Person と同じものを指す。
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://copernicus-tokyo.github.io/kiyaku.html#webpage",
+  "name": "研究会規約 — 分散型防災データ利活用研究会",
+  "url": "https://copernicus-tokyo.github.io/kiyaku.html",
+  "inLanguage": "ja",
+  "isPartOf": { "@id": "https://copernicus-tokyo.github.io/#website" },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://copernicus-tokyo.github.io/#organization",
+    "name": "分散型防災データ利活用研究会",
+    "url": "https://copernicus-tokyo.github.io/"
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://copernicus-tokyo.github.io/#furuya",
+    "name": "古屋 貴司",
+    "alternateName": "Takashi Furuya"
+  },
+  "creator": { "@id": "https://copernicus-tokyo.github.io/#furuya" },
+  "mainEntity": {
+    "@type": "DigitalDocument",
+    "@id": "https://copernicus-tokyo.github.io/kiyaku.html#kiyaku",
+    "name": "分散型防災データ利活用研究会 規約",
+    "inLanguage": "ja",
+    "datePublished": "2024-03-28",
+    "creator": { "@id": "https://copernicus-tokyo.github.io/#organization" },
+    "publisher": { "@id": "https://copernicus-tokyo.github.io/#organization" }
+  }
+}
+</script>
 </head>
 <body>
 

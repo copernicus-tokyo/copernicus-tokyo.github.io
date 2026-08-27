@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>分散型防災データ利活用研究会｜防災データを、集約せずに使う</title>
 <meta name="description" content="各地に散らばる防災データを、一箇所に集めることなくブラウザ上で重ね合わせて使う。その仕組みを産官学民で社会実装する研究会です。2022年の発足以来、毎月開催しています。">
+<!-- サイトの企画・執筆・デザイン・実装。発行主体は研究会（下部のJSON-LDを参照） -->
+<meta name="author" content="古屋 貴司 (Takashi Furuya)">
 <!-- SEO:start -->
 <link rel="canonical" href="https://copernicus-tokyo.github.io/">
 <meta property="og:type" content="website">
@@ -23,6 +25,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://copernicus-tokyo.github.io/#organization",
   "name": "分散型防災データ利活用研究会",
   "alternateName": ["COPERNICUS研究会", "非中央集権WebGIS研究会", "Distributed Disaster-Data Utilization Study Group"],
   "url": "https://copernicus-tokyo.github.io/",
@@ -54,6 +57,31 @@
     "identifier": "https://doi.org/10.24506/jsda.10.3_e22",
     "url": "https://doi.org/10.24506/jsda.10.3_e22"
   }
+}
+</script>
+
+<!--
+  サイトそのものの制作クレジット。
+  author（＝creator）は個人、publisher は研究会。両者を分けておく。
+  schema.org の producer は音楽アルバム・映画・TV/ラジオ番組などの制作を
+  想定した語で、ウェブサイトには合わない。director は映像作品向け。
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://copernicus-tokyo.github.io/#website",
+  "name": "分散型防災データ利活用研究会",
+  "url": "https://copernicus-tokyo.github.io/",
+  "inLanguage": "ja",
+  "publisher": { "@id": "https://copernicus-tokyo.github.io/#organization" },
+  "author": {
+    "@type": "Person",
+    "@id": "https://copernicus-tokyo.github.io/#furuya",
+    "name": "古屋 貴司",
+    "alternateName": "Takashi Furuya"
+  },
+  "creator": { "@id": "https://copernicus-tokyo.github.io/#furuya" }
 }
 </script>
 <!-- SEO:end -->
