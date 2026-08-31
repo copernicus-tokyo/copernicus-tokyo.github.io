@@ -293,6 +293,15 @@ a[target="_blank"]:hover::after{opacity:1;transform:translate(1px,-1px)}
 /* ---------- 座組 ---------- */
 .orgs{display:flex;flex-wrap:wrap;gap:9px 10px}
 .org{border:1px solid var(--line);border-radius:99px;padding:7px 17px;font-size:.87rem;background:#fff}
+/* 会員の一覧。会長・副会長のカード（.person）を一段軽くした形。
+   名称を明朝で大きく、所属を小さく。役員より控えめに見えるよう寸法を落としている。 */
+.mems{list-style:none;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px}
+.mem{border:1px solid var(--line);border-radius:5px;padding:13px 16px;background:#fff}
+.mem__n{display:block;font-family:var(--mincho);font-weight:700;
+  font-size:1.02rem;letter-spacing:.08em;line-height:1.5;word-break:auto-phrase}
+.mem__o{display:block;font-size:.78rem;color:var(--ink-soft);
+  margin-top:5px;line-height:1.7;word-break:auto-phrase}
 .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:22px}
 .person{border:1px solid var(--line);border-radius:5px;padding:17px 20px;background:#fff}
 .person__r{font-size:.74rem;letter-spacing:.18em;color:var(--blue);margin-bottom:6px}
