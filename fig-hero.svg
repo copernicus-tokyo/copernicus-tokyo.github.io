@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img"
-     aria-label="データを集約しない仕組みの図。行政・研究機関・民間のデータは各組織に置かれたまま、閲覧者のブラウザの上で重なる。一箇所に集めるためのデータベースはつくらない">
+     aria-label="データを一極集中させない仕組みの図。行政・研究機関・民間のデータは各組織に置かれたまま、閲覧者のブラウザの上で重なる。一箇所に集めるためのデータベースはつくらない">
 <!-- 表示幅は約454px（縮小率0.28倍）。本文文字は40px以上とし、画面上で11px相当を確保している -->
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -14,7 +14,7 @@
 
 <g font-family="'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif">
 
-  <text x="80" y="118" font-size="62" font-weight="700" fill="#005bba">集約せずに、重ねる</text>
+  <text x="80" y="118" font-size="62" font-weight="700" fill="#005bba">一極集中せずに、重ねる</text>
 
   <!-- 左：データは各組織に置かれたまま -->
   <g>
@@ -62,7 +62,7 @@
   </g>
   <text x="880" y="640" font-size="46" font-weight="700" fill="#12203a">ブラウザの上で重なる</text>
 
-  <!-- 下段：集約用のデータベースをつくらない -->
+  <!-- 下段：一極集中のためのデータベースをつくらない -->
   <g>
     <rect x="80" y="690" width="1440" height="230" rx="16" fill="#ffffff" fill-opacity=".6" stroke="#d6e3f4" stroke-width="3"/>
     <g>

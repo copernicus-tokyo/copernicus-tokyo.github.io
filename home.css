@@ -143,6 +143,8 @@ a:hover{text-decoration:underline}
 /* ---------- section 共通 ---------- */
 .sec{padding:clamp(48px,7vh,80px) 0}
 .sec--tint{background:var(--bg-tint);border-block:1px solid var(--line-soft)}
+/* 1ページのなかで話題が変わるときの区切り線（layersets.html の風水害の欄） */
+.sec--rule{border-top:1px solid var(--line-soft)}
 .sec__head{margin-bottom:clamp(26px,4vh,40px)}
 .sec__label{
   display:block;font-family:var(--latin);font-style:italic;
