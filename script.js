@@ -30,8 +30,10 @@
 
   /* ----- お知らせ: news.js を読み込んで差し替える -----
      1行1件。「日付 半角スペース 本文」。# 行と空行は無視。
-     news.js は index.html / story.html の両方から読み込まれます。
-     読み込めない場合は、HTMLに書かれた予備の項目がそのまま表示されます。 */
+     いまこの処理は動きません。script.js を読み込むのは story.html だけで、
+     そのページはお知らせを出さないためです（トップページは index.html 内の同じ処理を使います）。
+     story.html にお知らせの枠（id="news" と id="news-list"）を置き、news.js を読み込めば、
+     そのときから動きます。読み込めない場合は、HTMLに書かれた予備の項目がそのまま表示されます。 */
   (function(){
     var box = document.getElementById("news");
     var list = document.getElementById("news-list");
