@@ -15,4 +15,4 @@ User-agent: *
 Allow: /
 # Disallow: /       ← 検索を止めたいときは、この行の「# 」を外し、上の Allow 行を「# 」で無効化する
 
-Sitemap: https://copernicus-tokyo.github.io/sitemap.xml
+Sitemap: https://copernicus.gr.jp/sitemap.xml
