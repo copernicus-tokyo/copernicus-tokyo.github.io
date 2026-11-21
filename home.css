@@ -203,6 +203,15 @@ img.work__img--fit{aspect-ratio:16/9;height:auto;object-fit:contain;
   background:var(--blue);color:#fff;font-size:.86rem;letter-spacing:.08em;
 }
 .set__go:hover{background:var(--blue-deep);color:#fff;text-decoration:none}
+/* 会員向けの地図（高木氏の mapMashupTester）。公開版の青と色で見分ける */
+.set__go--mem{
+  margin-left:10px;border-color:#c9a800;background:var(--sun);color:var(--ink);
+}
+.set__go--mem:hover{background:#e8c400;color:var(--ink);text-decoration:none}
+.set__go--mem .set__key{
+  display:inline-block;margin-right:8px;padding:1px 8px;border-radius:99px;
+  background:rgba(255,255,255,.75);font-size:.72rem;letter-spacing:.04em;
+}
 /* 推計震度分布を手で選び直す案内。平田氏の指摘（2026-11-19 後）を受けた注記 */
 .set__pick{margin-top:11px;font-size:.78rem;line-height:1.75;color:#c62828}
 .set__pick b{font-weight:700}
@@ -443,21 +452,6 @@ a.rec__a:hover{background:#dfecfb;text-decoration:none}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,.84,.28,1)}
 .rv.on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-
-/* 会員向けリンク（kumamoto.html） */
-.kset__mem{margin-top:18px;padding:16px 18px;background:var(--bg-tint);border:1px dashed var(--line);border-radius:5px}
-.kset__memt{font-size:.86rem;font-weight:500;margin-bottom:9px}
-.kset__lock{
-  display:inline-block;margin-right:9px;padding:2px 10px;border-radius:99px;
-  background:#fff;border:1px solid var(--line);color:var(--ink-soft);
-  font-size:.7rem;letter-spacing:.06em;
-}
-.kset__memd{font-size:.78rem;color:var(--ink-soft);margin:9px 0 13px}
-.kset__go2{
-  display:inline-block;padding:9px 20px;border:1px solid var(--blue);border-radius:3px;
-  background:#fff;color:var(--blue);font-size:.84rem;letter-spacing:.08em;
-}
-.kset__go2:hover{background:#eef5fd;text-decoration:none}
 
 /* ---------- トップのスライド ---------- */
 .shot__body{position:relative}
