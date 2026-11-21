@@ -216,6 +216,17 @@ img.work__img--fit{aspect-ratio:16/9;height:auto;object-fit:contain;
 .set__pick{margin-top:11px;font-size:.78rem;line-height:1.75;color:#c62828}
 .set__pick b{font-weight:700}
 /* 地図を開く直前の操作の案内。赤の .set__pick（訂正）とは役割が違うので色を分ける */
+/* はじめての方へ（操作のループ動画）。押さなくても動いて目に入ることが肝 */
+.howto{margin:26px 0 8px;padding:20px 22px;background:var(--bg-tint);
+  border:1px solid var(--line);border-radius:6px}
+.howto__t{font-size:.95rem;font-weight:500;margin-bottom:13px;color:var(--ink)}
+.howto__v{display:block;width:100%;height:auto;border:1px solid var(--line);
+  border-radius:4px;background:#fff}
+.howto__l{list-style:none;margin:15px 0 0;display:grid;gap:8px}
+.howto__l li{font-size:.85rem;line-height:1.7;color:var(--ink-soft);
+  padding-left:15px;border-left:3px solid var(--astral)}
+.howto__l b{color:var(--ink);margin-right:7px}
+@media (max-width:560px){.howto{padding:15px 14px}}
 .set__tip{
   margin-top:11px;padding:9px 13px;border-left:3px solid var(--astral);
   background:var(--bg-tint);font-size:.78rem;line-height:1.75;color:var(--ink-soft);

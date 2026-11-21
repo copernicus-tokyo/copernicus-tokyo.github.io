@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="home.css?v=45">
+<link rel="stylesheet" href="home.css?v=46">
 
 <!-- アクセス解析（GoatCounter）。Cookieを使わず、IPアドレスとUser-Agentを保存しない。
      個人を識別せず、集計結果だけを残すため、同意バナーは置いていない。
@@ -100,6 +100,27 @@
       </li>
     </ul>
   </div>
+
+  <div class="howto">
+    <p class="howto__t">はじめての方へ　地図の使い方</p>
+    <video class="howto__v" src="howto-map.mp4" poster="howto-map.jpg"
+           autoplay muted loop playsinline preload="metadata" width="1000" height="625"
+           aria-label="全国で開いた地図を、見たい地域まで拡大し、アイコンをクリックすると地点の情報が出るまでを写した、音声のない12秒の繰り返し動画です。"></video>
+    <ul class="howto__l">
+      <li><b>拡大・縮小</b>全国から、見たい地域まで。この仕組みの要です</li>
+      <li><b>クリック</b>アイコンや丸印を押すと、詳しい情報が出ます</li>
+      <li><b>レイヤー一覧</b>左上の一覧で、重ねるものを切り替えられます</li>
+    </ul>
+  </div>
+  <script>
+    /* 動きを控える設定の方には、自動では再生しない */
+    (function(){
+      var v = document.querySelector(".howto__v");
+      if (v && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        v.removeAttribute("autoplay"); v.setAttribute("controls", ""); v.pause();
+      }
+    })();
+  </script>
 
   <div class="sets">
       <article class="set">
