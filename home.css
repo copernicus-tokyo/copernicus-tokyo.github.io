@@ -215,6 +215,11 @@ img.work__img--fit{aspect-ratio:16/9;height:auto;object-fit:contain;
 /* 推計震度分布を手で選び直す案内。平田氏の指摘（2026-11-19 後）を受けた注記 */
 .set__pick{margin-top:11px;font-size:.78rem;line-height:1.75;color:#c62828}
 .set__pick b{font-weight:700}
+/* 地図を開く直前の操作の案内。赤の .set__pick（訂正）とは役割が違うので色を分ける */
+.set__tip{
+  margin-top:11px;padding:9px 13px;border-left:3px solid var(--astral);
+  background:var(--bg-tint);font-size:.78rem;line-height:1.75;color:var(--ink-soft);
+}
 .sets__note{
   margin-top:26px;padding:16px 18px;background:var(--bg-tint);
   border-left:3px solid var(--line);font-size:.86rem;color:var(--ink-soft);
