@@ -203,6 +203,9 @@ img.work__img--fit{aspect-ratio:16/9;height:auto;object-fit:contain;
   background:var(--blue);color:#fff;font-size:.86rem;letter-spacing:.08em;
 }
 .set__go:hover{background:var(--blue-deep);color:#fff;text-decoration:none}
+/* 推計震度分布を手で選び直す案内。平田氏の指摘（2026-11-19 後）を受けた注記 */
+.set__pick{margin-top:11px;font-size:.78rem;line-height:1.75;color:#c62828}
+.set__pick b{font-weight:700}
 .sets__note{
   margin-top:26px;padding:16px 18px;background:var(--bg-tint);
   border-left:3px solid var(--line);font-size:.86rem;color:var(--ink-soft);
